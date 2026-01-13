@@ -1,38 +1,52 @@
 import { db } from '../services/database';
+import { staticWorkouts } from './staticSeed';
 
 /**
  * Local Seeder
  * Syncs the global library from the server to Dexie.
- * Only runs if the local database is empty.
+ * Fallbacks to static bundle if the server is unreachable or empty.
  */
 export const syncLibrary = async () => {
   try {
     const count = await db.workouts.count();
     
-    // Always fetch latest to ensure library is up to date, 
-    // but in a production PWA we might want more complex sync logic.
-    const remoteWorkouts = await $fetch('/api/workouts/library');
+    let sourceData = [];
     
-    if (remoteWorkouts && remoteWorkouts.length > 0) {
-      // Clear and bulk add for a clean sync
-      await db.workouts.clear();
-      
-      const toAdd = remoteWorkouts.map(w => {
-        return {
+    try {
+      // Try to fetch from server
+      const remoteWorkouts = await $fetch('/api/workouts/library');
+      if (remoteWorkouts && remoteWorkouts.length > 0) {
+        sourceData = remoteWorkouts.map(w => ({
           id: w.id,
           title: w.title,
           difficulty: w.difficulty,
           durationMinutes: w.durationMinutes,
-          focusTags: w.focusTags.join(','), // store as string for easier indexing in Dexie if needed
+          focusTags: w.focusTags.join(','),
           format: w.format,
           blocks: w.blocks
-        };
-      });
-      
-      await db.workouts.bulkAdd(toAdd);
-      console.log('Local library synced:', toAdd.length, 'workouts');
+        }));
+        console.log('Syncing library from server...');
+      }
+    } catch (apiError) {
+      console.warn('Server API unreachable. Falling back to static seed.', apiError);
+    }
+
+    // If server failed or returned empty, and local is still empty, use static seed
+    if (sourceData.length === 0 && count === 0) {
+      sourceData = staticWorkouts.map((w, index) => ({
+        ...w,
+        id: index + 1 // Assign dummy IDs for consistency
+      }));
+      console.log('Populating library from static bundle...');
+    }
+
+    if (sourceData.length > 0) {
+      // Clear and bulk add for a clean sync
+      await db.workouts.clear();
+      await db.workouts.bulkAdd(sourceData);
+      console.log('Local library updated:', sourceData.length, 'workouts');
     }
   } catch (error) {
-    console.error('Failed to sync local library:', error);
+    console.error('Failed to initialize local library:', error);
   }
 };
