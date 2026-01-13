@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Program {
+  id               String           @id @default(cuid())
+  name             String
+  weeks            Int
+  daysPerWeek      Int
+  sessionDuration  Int              // in minutes
+  goal             String
+  intensity        Int
+  focusTags        String           // Comma separated tags
+  constraints      String?
+  startDate        DateTime         @default(now())
+  active           Boolean          @default(true)
+  sessions         ProgramSession[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model ProgramSession {
+  id                String   @id @default(cuid())
+  programId         String
+  program           Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  weekIndex         Int
+  dayIndex          Int
+  sessionType       String   // Strength, Conditioning, Mobility
+  status            String   @default("pending") // pending, completed
+  selectedWorkoutId String?
+  workout           Workout? @relation(fields: [selectedWorkoutId], references: [id])
+  completedAt       DateTime?
+  logs              WorkoutFeedback[]
+}
+
+model Workout {
+  id                String           @id @default(cuid())
+  title             String
+  source            String?
+  durationMinutes   Int
+  difficulty        Int
+  focusTags         String           // Comma separated tags
+  format            String           // AMRAP, EMOM, Tabata, etc.
+  equipment         String?          // JSON string of equipment
+  blocks            String           // JSON string of workout blocks (CRITICAL)
+  contraindications String?
+  notes             String?
+  sessions          ProgramSession[]
+  feedbacks         WorkoutFeedback[]
+}
+
+model WorkoutFeedback {
+  id              String         @id @default(cuid())
+  sessionId       String
+  session         ProgramSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  workoutId       String
+  workout         Workout        @relation(fields: [workoutId], references: [id])
+  rating          Int
+  repeat          Boolean        @default(true)
+  perceivedEffort String         // easy, ok, hard
+  notes           String?
+  createdAt       DateTime       @default(now())
+}
