@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     public: {
       // 'remote' = Uses Prisma/Server API
       // 'local' = Uses Dexie/IndexedDB (for PWA/Android)
-      databaseMode: 'remote' 
+      databaseMode: 'local' 
     }
   },
   future: {
