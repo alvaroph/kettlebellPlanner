@@ -12,7 +12,9 @@ onMounted(async () => {
 
 const searchQuery = ref('');
 const expandedWorkoutId = ref(null);
+const expandedCategories = ref(new Set());
 
+// By default, expand all if there is a search query
 const filteredWorkouts = computed(() => {
   if (!workouts.value) return [];
   if (!searchQuery.value) return workouts.value;
@@ -35,12 +37,32 @@ const groupedWorkouts = computed(() => {
   return groups;
 });
 
+// Auto-expand categories when searching
+watch(searchQuery, (newVal) => {
+  if (newVal) {
+    Object.keys(groupedWorkouts.value).forEach(tag => expandedCategories.value.add(tag));
+  }
+}, { immediate: true });
+
+function toggleCategory(tag) {
+  if (expandedCategories.value.has(tag)) {
+    expandedCategories.value.delete(tag);
+  } else {
+    expandedCategories.value.add(tag);
+  }
+}
+
 function toggleExpand(id) {
   expandedWorkoutId.value = expandedWorkoutId.value === id ? null : id;
 }
 
 function getTags(w) {
-  return Array.isArray(w.focusTags) ? w.focusTags : w.focusTags.split(',');
+  const tags = Array.isArray(w.focusTags) ? w.focusTags : w.focusTags.split(',');
+  return tags.filter(t => t.trim() !== "");
+}
+
+function isCategoryExpanded(tag) {
+  return expandedCategories.value.has(tag);
 }
 </script>
 
@@ -70,15 +92,24 @@ function getTags(w) {
       <div class="h-12 w-12 border-4 border-orange-500/20 border-t-orange-500 rounded-full animate-spin"></div>
     </div>
 
-    <div v-else class="flex flex-col gap-12">
+    <div v-else class="flex flex-col gap-10">
       <div v-for="(list, tag) in groupedWorkouts" :key="tag" class="flex flex-col gap-6">
-        <h2 class="text-xl font-black uppercase tracking-tighter text-white flex items-center gap-4 italic">
-          {{ tag }}
+        <h2 
+          class="text-xl font-black uppercase tracking-tighter text-white flex items-center gap-4 italic cursor-pointer select-none group"
+          @click="toggleCategory(tag)"
+        >
+          <span :class="isCategoryExpanded(tag) ? 'text-orange-500' : 'text-zinc-500'" class="transition-colors">{{ tag }}</span>
           <div class="h-[2px] flex-1 bg-gradient-to-r from-zinc-800 to-transparent"></div>
-          <span class="text-[10px] font-black text-zinc-700 bg-zinc-900 px-3 py-1 rounded-full">{{ list.length }} Sessions</span>
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] font-black text-zinc-700 bg-zinc-900 px-3 py-1 rounded-full group-hover:text-zinc-400 transition-colors">{{ list.length }} Sessions</span>
+            <div 
+              class="h-5 w-5 i-lucide-chevron-right transition-transform duration-300"
+              :class="isCategoryExpanded(tag) ? 'rotate-90 text-orange-500' : 'text-zinc-700'"
+            ></div>
+          </div>
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div v-if="isCategoryExpanded(tag)" class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2 duration-300">
           <div 
             v-for="workout in list" 
             :key="workout.id"
