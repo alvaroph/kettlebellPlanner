@@ -1,14 +1,24 @@
 <script setup>
 // pages/calendar.vue
-const { getCurrentProgram } = useData();
+const { getCurrentProgram, deleteCurrentProgram } = useData();
 
 const program = ref(null);
 const pending = ref(true);
 
-onMounted(async () => {
+const loadData = async () => {
+  pending.value = true;
   program.value = await getCurrentProgram();
   pending.value = false;
-});
+};
+
+onMounted(loadData);
+
+async function handleDelete() {
+  if (confirm('Are you sure you want to delete the current program? This will remove all progress.')) {
+    await deleteCurrentProgram();
+    await loadData();
+  }
+}
 
 function getSessionsByWeek(week) {
   if (!program.value || !program.value.sessions) return [];
@@ -27,11 +37,19 @@ function getWeeks() {
     <header class="mb-10 flex items-start justify-between">
       <div class="flex flex-col gap-1">
         <h1 class="text-4xl font-black italic uppercase tracking-tighter">Plan Overview</h1>
-        <p v-if="program" class="text-orange-500 font-black uppercase text-[10px] tracking-widest -mt-1">{{ program.name }}</p>
-        <NuxtLink v-if="program" to="/wizard" class="text-[10px] font-bold text-zinc-500 hover:text-orange-500 transition-colors uppercase tracking-widest mt-2 flex items-center gap-2">
-          <div class="h-3 w-3 icon-mask i-lucide-plus-circle"></div>
-          Start New Program
-        </NuxtLink>
+        <div v-if="program" class="flex flex-col gap-3">
+          <p class="text-orange-500 font-black uppercase text-[10px] tracking-widest -mt-1">{{ program.name }}</p>
+          <div class="flex items-center gap-4">
+            <NuxtLink to="/wizard" class="text-[10px] font-bold text-zinc-500 hover:text-white transition-colors uppercase tracking-widest flex items-center gap-2">
+              <div class="h-3 w-3 icon-mask i-lucide-plus-circle"></div>
+              New Program
+            </NuxtLink>
+            <button @click="handleDelete" class="text-[10px] font-bold text-red-500/60 hover:text-red-500 transition-colors uppercase tracking-widest flex items-center gap-2">
+              <div class="h-3 w-3 icon-mask i-lucid-trash text-current"></div>
+              Delete Plan
+            </button>
+          </div>
+        </div>
       </div>
       <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-16 w-16 object-contain grayscale-[0.2] brightness-125 -mt-2" />
     </header>
@@ -63,7 +81,7 @@ function getWeeks() {
             :to="session.status === 'completed' ? '#' : '/session/' + session.id"
             class="aspect-square rounded-3xl border-2 transition-all active:scale-[0.92] flex flex-col p-4 relative overflow-hidden group shadow-lg"
             :class="session.status === 'completed' 
-              ? 'bg-zinc-900 border-zinc-900/50 grayscale' 
+              ? 'bg-zinc-900 border-zinc-900/50 opacity-80' 
               : 'bg-zinc-900 border-zinc-800 hover:border-orange-500 hover:shadow-orange-500/10'"
           >
             <!-- Background Accent -->

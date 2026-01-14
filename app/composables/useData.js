@@ -10,11 +10,36 @@ export const useData = () => {
 
   // --- WORKOUTS ---
   const getWorkouts = async () => {
+    let workouts = [];
     if (isLocal) {
-      return await db.workouts.toArray();
+      workouts = await db.workouts.toArray();
     } else {
-      return await $fetch('/api/workouts/library');
+      workouts = await $fetch('/api/workouts/library');
     }
+
+    if (isLocal) {
+      // Cross-reference with completed sessions and feedback
+      const completedSessions = await db.sessions.where('status').equals('completed').toArray();
+      const feedbacks = await db.feedback.toArray();
+      
+      return workouts.map(w => {
+        const matchingSessions = completedSessions.filter(s => s.selectedWorkoutId === w.id);
+        const matchingFeedbacks = feedbacks.filter(f => f.workoutId === w.id);
+        
+        return {
+          ...w,
+          isCompleted: matchingSessions.length > 0,
+          timesCompleted: matchingSessions.length,
+          feedbacks: matchingFeedbacks.map(f => ({
+            date: f.createdAt,
+            rating: f.rating,
+            notes: f.notes,
+            effort: f.repeat ? 'Repeat Preferred' : 'Standard'
+          }))
+        };
+      });
+    }
+    return workouts;
   };
 
   // --- PROGRAMS ---
@@ -25,9 +50,12 @@ export const useData = () => {
       
       const sessions = await db.sessions
         .where('programId').equals(program.id)
-        .sortBy('weekIndex');
+        .toArray();
         
-      return { ...program, sessions: sessions };
+      return { 
+        ...program, 
+        sessions: sessions.sort((a,b) => (a.weekIndex - b.weekIndex) || (a.dayIndex - b.dayIndex)) 
+      };
     } else {
       return await $fetch('/api/programs/current');
     }
@@ -129,11 +157,33 @@ export const useData = () => {
     }
   };
 
+  const deleteCurrentProgram = async () => {
+    if (isLocal) {
+      const program = await db.programs.where('active').equals(1).first();
+      if (program) {
+        await db.sessions.where('programId').equals(program.id).delete();
+        await db.programs.update(program.id, { active: 0 }); // Mark as inactive/deleted
+        console.log('Program deleted locally');
+      }
+    } else {
+      await $fetch('/api/programs/current', { method: 'DELETE' });
+    }
+  };
+
+  const requestPersistence = async () => {
+    if (typeof navigator !== 'undefined' && navigator.storage && navigator.storage.persist) {
+      const isPersisted = await navigator.storage.persist();
+      console.log(`Resource persistence confirmed: ${isPersisted}`);
+    }
+  };
+
   return {
     getWorkouts,
     getCurrentProgram,
     createProgram,
     getDailySession,
-    completeSession
+    completeSession,
+    deleteCurrentProgram,
+    requestPersistence
   };
 };

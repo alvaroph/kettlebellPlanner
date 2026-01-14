@@ -31,11 +31,11 @@ export const syncLibrary = async () => {
       console.warn('Server API unreachable. Falling back to static seed.', apiError);
     }
 
-    // If server failed or returned empty, and local is still empty, use static seed
+    // If API returned nothing and local is empty, or API just failed, use static
     if (sourceData.length === 0 && count === 0) {
       sourceData = staticWorkouts.map((w, index) => ({
         ...w,
-        id: index + 1 // Assign dummy IDs for consistency
+        id: w.id || (index + 1)
       }));
       console.log('Populating library from static bundle...');
     }

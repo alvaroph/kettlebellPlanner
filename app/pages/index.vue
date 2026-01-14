@@ -1,19 +1,28 @@
 <script setup>
 // pages/index.vue
 import { syncLibrary } from '~/utils/seeder';
-const { getCurrentProgram } = useData();
+const { getCurrentProgram, deleteCurrentProgram } = useData();
 
 const program = ref(null);
 const pending = ref(true);
 
-onMounted(async () => {
-  // 1. Ensure local library is synced (non-blocking)
-  syncLibrary();
-  
-  // 2. Load program data
+const loadData = async () => {
+  pending.value = true;
   program.value = await getCurrentProgram();
   pending.value = false;
+};
+
+onMounted(() => {
+  syncLibrary();
+  loadData();
 });
+
+async function handleDelete() {
+  if (confirm('Delete current program?')) {
+    await deleteCurrentProgram();
+    await loadData();
+  }
+}
 
 function getCompletedCount() {
   if (!program.value || !program.value.sessions) return 0;
@@ -44,9 +53,7 @@ function getNextSession() {
     </div>
 
     <div v-else-if="!program" class="h-full flex flex-col items-center justify-center py-20 text-center gap-6">
-      <div class="h-24 w-24 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800">
-        <div class="h-10 w-10 icon-mask i-lucide-dumbbell text-zinc-700"></div>
-      </div>
+      <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-32 w-32 object-contain grayscale-[0.2] brightness-125 mb-4 animate-pulse duration-[3000ms]" />
       <div>
         <h2 class="text-2xl font-bold mb-2">No active plan</h2>
         <p class="text-zinc-400">Design your next training program in seconds.</p>
@@ -61,6 +68,10 @@ function getNextSession() {
         <div class="flex flex-col">
           <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-1">Current Program</h2>
           <h1 class="text-3xl font-black italic uppercase tracking-tighter">{{ program.name }}</h1>
+          <button @click="handleDelete" class="text-[10px] font-bold text-red-500/50 hover:text-red-500 transition-colors uppercase tracking-widest mt-2 flex items-center gap-2">
+            <div class="h-3 w-3 icon-mask i-lucide-trash text-current"></div>
+            Delete Plan
+          </button>
         </div>
         <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-16 w-16 object-contain grayscale-[0.2] brightness-125 -mt-2" />
       </header>
