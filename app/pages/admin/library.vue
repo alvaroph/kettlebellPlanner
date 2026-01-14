@@ -1,5 +1,8 @@
 <script setup>
 // pages/admin/library.vue
+import { parseWorkout } from '~/utils/parser';
+import { db } from '~/services/database';
+
 const rawText = ref('');
 const workoutData = ref(null);
 const isParsing = ref(false);
@@ -11,11 +14,8 @@ async function handleParse() {
   isParsing.value = true;
   successMessage.value = '';
   try {
-    const response = await $fetch('/api/workouts/parse', {
-      method: 'POST',
-      body: { text: rawText.value }
-    });
-    workoutData.value = response;
+    // Local parse operation
+    workoutData.value = parseWorkout(rawText.value);
   } catch (error) {
     console.error("Parse error", error);
     alert("Error parsing text");
@@ -28,18 +28,21 @@ async function handleSave() {
   if (!workoutData.value) return;
   isSaving.value = true;
   try {
-    const response = await $fetch('/api/workouts', {
-      method: 'POST',
-      body: workoutData.value
-    });
-    if (response.success) {
-      successMessage.value = 'Workout saved successfully!';
-      rawText.value = '';
-      workoutData.value = null;
-    }
+    // Direct Dexie save
+    const dataToSave = {
+      ...workoutData.value,
+      focusTags: Array.isArray(workoutData.value.focus) ? workoutData.value.focus.join(',') : (workoutData.value.focusTags || "General"),
+      createdAt: new Date()
+    };
+    
+    await db.workouts.add(dataToSave);
+    
+    successMessage.value = 'Workout saved locally!';
+    rawText.value = '';
+    workoutData.value = null;
   } catch (error) {
     console.error("Save error", error);
-    alert("Error saving workout");
+    alert("Error saving workout locally");
   } finally {
     isSaving.value = false;
   }

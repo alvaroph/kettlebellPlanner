@@ -1,175 +1,127 @@
 import { db } from '../services/database';
+import { generateStructure, recommendWorkouts } from '../utils/planner';
 
 /**
- * Repository Composable
- * Centralizes all data access to switch between Remote (API) and Local (Dexie).
+ * Repository Composable (Serverless)
+ * Centralizes all data access using Dexie (IndexedDB). No API calls.
  */
 export const useData = () => {
-  const config = useRuntimeConfig();
-  const isLocal = config.public.databaseMode === 'local';
-
   // --- WORKOUTS ---
   const getWorkouts = async () => {
-    let workouts = [];
-    if (isLocal) {
-      workouts = await db.workouts.toArray();
-    } else {
-      workouts = await $fetch('/api/workouts/library');
-    }
-
-    if (isLocal) {
-      // Cross-reference with completed sessions and feedback
-      const completedSessions = await db.sessions.where('status').equals('completed').toArray();
-      const feedbacks = await db.feedback.toArray();
+    const workouts = await db.workouts.toArray();
+    
+    // Cross-reference with completed sessions and feedback
+    const completedSessions = await db.sessions.where('status').equals('completed').toArray();
+    const feedbacks = await db.feedback.toArray();
+    
+    return workouts.map(w => {
+      const matchingSessions = completedSessions.filter(s => s.selectedWorkoutId === w.id);
+      const matchingFeedbacks = feedbacks.filter(f => f.workoutId === w.id);
       
-      return workouts.map(w => {
-        const matchingSessions = completedSessions.filter(s => s.selectedWorkoutId === w.id);
-        const matchingFeedbacks = feedbacks.filter(f => f.workoutId === w.id);
-        
-        return {
-          ...w,
-          isCompleted: matchingSessions.length > 0,
-          timesCompleted: matchingSessions.length,
-          feedbacks: matchingFeedbacks.map(f => ({
-            date: f.createdAt,
-            rating: f.rating,
-            notes: f.notes,
-            effort: f.repeat ? 'Repeat Preferred' : 'Standard'
-          }))
-        };
-      });
-    }
-    return workouts;
+      return {
+        ...w,
+        isCompleted: matchingSessions.length > 0,
+        timesCompleted: matchingSessions.length,
+        feedbacks: matchingFeedbacks.map(f => ({
+          date: f.createdAt,
+          rating: f.rating,
+          notes: f.notes,
+          effort: f.repeat ? 'Repeat Preferred' : 'Standard'
+        }))
+      };
+    });
   };
 
   // --- PROGRAMS ---
   const getCurrentProgram = async () => {
-    if (isLocal) {
-      const program = await db.programs.where('active').equals(1).first();
-      if (!program) return null;
+    const program = await db.programs.where('active').equals(1).first();
+    if (!program) return null;
+    
+    const sessions = await db.sessions
+      .where('programId').equals(program.id)
+      .toArray();
       
-      const sessions = await db.sessions
-        .where('programId').equals(program.id)
-        .toArray();
-        
-      return { 
-        ...program, 
-        sessions: sessions.sort((a,b) => (a.weekIndex - b.weekIndex) || (a.dayIndex - b.dayIndex)) 
-      };
-    } else {
-      return await $fetch('/api/programs/current');
-    }
+    return { 
+      ...program, 
+      sessions: sessions.sort((a,b) => (a.weekIndex - b.weekIndex) || (a.dayIndex - b.dayIndex)) 
+    };
   };
 
   const createProgram = async (data) => {
-    if (isLocal) {
-      // 1. Deactivate old programs
-      await db.programs.where('active').equals(1).modify({ active: 0 });
-      
-      // 2. Add new program
-      const id = await db.programs.add({
-        name: data.name,
-        weeks: data.weeks,
-        daysPerWeek: data.daysPerWeek,
-        goal: data.goal,
-        intensity: data.intensity,
-        active: 1,
-        createdAt: new Date()
-      });
+    // 1. Deactivate old programs
+    await db.programs.where('active').equals(1).modify({ active: 0 });
+    
+    // 2. Add new program
+    const id = await db.programs.add({
+      name: data.name,
+      weeks: data.weeks,
+      daysPerWeek: data.daysPerWeek,
+      goal: data.goal,
+      intensity: data.intensity,
+      active: 1,
+      createdAt: new Date()
+    });
 
-      // 3. Generate sessions (logic mirrored from server/utils/planner)
-      // For simplicity, we can import generateStructure if it's exported and works in browser
-      // or we can just mirror it here.
-      const structure = [];
-      const sessionTypes = ['Strength', 'Conditioning', 'Mobility'];
-      for (let w = 1; w <= data.weeks; w++) {
-        for (let d = 1; d <= data.daysPerWeek; d++) {
-          const typeIndex = (w + d) % sessionTypes.length;
-          structure.push({
-            programId: id,
-            weekIndex: w,
-            dayIndex: d,
-            sessionType: sessionTypes[typeIndex],
-            status: 'pending'
-          });
-        }
-      }
-      await db.sessions.bulkAdd(structure);
-      return { success: true, programId: id };
-    } else {
-      return await $fetch('/api/programs/create', { method: 'POST', body: data });
+    // 3. Generate sessions using local utility
+    const planStructure = generateStructure(data.weeks, data.daysPerWeek, data.goal);
+    const sessions = planStructure.map(s => ({
+      ...s,
+      programId: id,
+      status: 'pending'
+    }));
+
+    await db.sessions.bulkAdd(sessions);
+    return { success: true, programId: id };
+  };
+
+  const deleteCurrentProgram = async () => {
+    const program = await db.programs.where('active').equals(1).first();
+    if (program) {
+      await db.sessions.where('programId').equals(program.id).delete();
+      await db.programs.update(program.id, { active: 0 }); // Mark as inactive/deleted
+      console.log('Program deleted locally');
     }
   };
 
   // --- SESSIONS ---
   const getDailySession = async (sessionId) => {
-    if (isLocal) {
-      const session = await db.sessions.get(parseInt(sessionId));
-      const history = await db.sessions
-        .where('status').equals('completed')
-        .limit(5)
-        .toArray();
-      
-      const workouts = await db.workouts.toArray();
-      
-      // Filter logic mirrored from server/utils/planner
-      const searchType = (session.sessionType || "").toLowerCase();
-      const filtered = workouts.filter(w => {
-        const tags = (w.focusTags || "").toLowerCase();
-        return tags.indexOf(searchType) !== -1;
-      });
+    const session = await db.sessions.get(parseInt(sessionId));
+    const history = await db.sessions
+      .where('status').equals('completed')
+      .limit(20)
+      .toArray();
+    
+    const workouts = await db.workouts.toArray();
+    
+    // Recommendations using local engine
+    const recommendations = recommendWorkouts(workouts, history, session.sessionType);
 
-      const recommendations = filtered.slice(0, 3);
-      // Fallback
-      if (recommendations.length === 0) {
-        recommendations.push(...workouts.slice(0, 3));
-      }
-
-      return {
-        session: session,
-        recommendations: recommendations
-      };
-    } else {
-      return await $fetch(`/api/sessions/daily?sessionId=${sessionId}`);
-    }
+    return {
+      session: session,
+      recommendations: recommendations
+    };
   };
 
   const completeSession = async (data) => {
-    if (isLocal) {
-      await db.sessions.update(parseInt(data.sessionId), {
-        status: 'completed',
-        selectedWorkoutId: data.workoutId,
-        completedAt: new Date()
-      });
-      
-      await db.feedback.add({
-        sessionId: parseInt(data.sessionId),
-        workoutId: data.workoutId,
-        rating: data.rating,
-        repeat: data.repeatPreference,
-        notes: data.notes,
-        createdAt: new Date()
-      });
-      
-      return { success: true };
-    } else {
-      return await $fetch('/api/sessions/complete', { method: 'POST', body: data });
-    }
+    await db.sessions.update(parseInt(data.sessionId), {
+      status: 'completed',
+      selectedWorkoutId: data.workoutId,
+      completedAt: new Date()
+    });
+    
+    await db.feedback.add({
+      sessionId: parseInt(data.sessionId),
+      workoutId: data.workoutId,
+      rating: data.rating,
+      repeat: data.repeatPreference,
+      notes: data.notes,
+      createdAt: new Date()
+    });
+    
+    return { success: true };
   };
 
-  const deleteCurrentProgram = async () => {
-    if (isLocal) {
-      const program = await db.programs.where('active').equals(1).first();
-      if (program) {
-        await db.sessions.where('programId').equals(program.id).delete();
-        await db.programs.update(program.id, { active: 0 }); // Mark as inactive/deleted
-        console.log('Program deleted locally');
-      }
-    } else {
-      await $fetch('/api/programs/current', { method: 'DELETE' });
-    }
-  };
-
+  // --- PERSISTENCE ---
   const requestPersistence = async () => {
     if (typeof navigator !== 'undefined' && navigator.storage && navigator.storage.persist) {
       const isPersisted = await navigator.storage.persist();
@@ -181,9 +133,9 @@ export const useData = () => {
     getWorkouts,
     getCurrentProgram,
     createProgram,
+    deleteCurrentProgram,
     getDailySession,
     completeSession,
-    deleteCurrentProgram,
     requestPersistence
   };
 };
