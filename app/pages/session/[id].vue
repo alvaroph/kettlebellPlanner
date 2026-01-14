@@ -73,14 +73,17 @@ function togglePreview(id) {
       
       <!-- Stage 1: Selection -->
       <div v-if="!selectedWorkout" class="animate-in fade-in slide-in-from-bottom-8 duration-500">
-        <header class="mb-10">
-          <div class="flex items-center gap-2 text-orange-500 font-black uppercase text-[10px] tracking-widest mb-1">
-            <span>Session Day {{ sessionData.session.dayIndex }}</span>
-            <span class="h-1.5 w-1.5 rounded-full bg-zinc-800"></span>
-            <span>Week {{ sessionData.session.weekIndex }}</span>
+        <header class="mb-10 flex items-start justify-between">
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2 text-orange-500 font-black uppercase text-[10px] tracking-widest mb-1">
+              <span>Session Day {{ sessionData.session.dayIndex }}</span>
+              <span class="h-1.5 w-1.5 rounded-full bg-zinc-800"></span>
+              <span>Week {{ sessionData.session.weekIndex }}</span>
+            </div>
+            <h1 class="text-4xl font-black italic uppercase tracking-tighter">Choose Your Path</h1>
+            <p class="text-zinc-500 text-sm mt-1">Pick one of these 3 tailored sessions.</p>
           </div>
-          <h1 class="text-4xl font-black italic uppercase tracking-tighter">Choose Your Path</h1>
-          <p class="text-zinc-500 text-sm mt-1">Pick one of these 3 tailored sessions.</p>
+          <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-16 w-16 object-contain grayscale-[0.2] brightness-125 -mt-2" />
         </header>
 
         <div class="flex flex-col gap-4">
@@ -94,7 +97,7 @@ function togglePreview(id) {
             <div @click="togglePreview(workout.id)" class="p-6 flex items-center justify-between cursor-pointer">
               <div class="flex items-center gap-4">
                 <div class="h-12 w-12 bg-zinc-950 rounded-full flex items-center justify-center text-orange-500 border border-zinc-800">
-                  <div class="h-6 w-6 i-lucide-activity"></div>
+                  <div class="h-6 w-6 icon-mask i-lucide-activity"></div>
                 </div>
                 <div>
                   <h3 class="font-black italic uppercase italic leading-tight">{{ workout.title }}</h3>
@@ -106,7 +109,7 @@ function togglePreview(id) {
                 </div>
               </div>
               <div class="h-8 w-8 rounded-full flex items-center justify-center transition-transform" :class="expandedWorkoutId === workout.id ? 'rotate-90 text-orange-500' : 'text-zinc-700'">
-                <div class="h-5 w-5 i-lucide-chevron-right"></div>
+                <div class="h-5 w-5 icon-mask i-lucide-chevron-right"></div>
               </div>
             </div>
 
@@ -156,7 +159,7 @@ function togglePreview(id) {
                 </div>
                 <!-- Interactive visual -->
                 <div class="h-12 w-12 bg-zinc-950 rounded-2xl flex items-center justify-center text-zinc-700 group-hover:bg-zinc-100 group-hover:text-zinc-950 transition-all duration-500 relative z-10">
-                   <div class="h-6 w-6 i-lucide-check"></div>
+                   <div class="h-6 w-6 icon-mask i-lucide-check"></div>
                 </div>
               </div>
             </div>
@@ -172,7 +175,7 @@ function togglePreview(id) {
       <div v-else class="animate-in fade-in duration-500 flex flex-col gap-8">
         <header class="text-center">
           <div class="h-20 w-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <div class="h-10 w-10 i-lucide-check-circle scale-150"></div>
+            <div class="h-10 w-10 icon-mask i-lucide-check-circle scale-150"></div>
           </div>
           <h1 class="text-3xl font-black italic uppercase tracking-tighter">Mission Accomplished</h1>
           <p class="text-zinc-500 font-medium">How was the experience?</p>
@@ -209,7 +212,7 @@ function togglePreview(id) {
               class="h-8 w-8 rounded-full flex items-center justify-center transition-all"
               :class="feedback.repeat ? 'bg-orange-500 text-white' : 'bg-zinc-800 text-zinc-600'"
             >
-              <div class="h-5 w-5 i-lucide-check"></div>
+              <div class="h-5 w-5 icon-mask i-lucide-check"></div>
             </div>
           </button>
 
@@ -234,10 +237,4 @@ function togglePreview(id) {
 </template>
 
 <style scoped>
-.i-lucide-activity { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-4l-3 9L9 3l-3 9H2'/%3E%3C/svg%3E"); }
-.i-lucide-check { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); }
-.i-lucide-dumbbell { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6.5 6.5 11 11'/%3E%3Cpath d='m10 10 5.5 5.5'/%3E%3Cpath d='m3 21 8-8'/%3E%3Cpath d='m9 15 3 3'/%3E%3Cpath d='M21 3l-8 8'/%3E%3Cpath d='m15 9 3 3'/%3E%3Cpath d='m3 7 4-4'/%3E%3Cpath d='m5 8 3-3'/%3E%3Cpath d='m17 21 4-4'/%3E%3Cpath d='m16 19 3-3'/%3E%3C/svg%3E"); }
-.i-lucide-zap { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); }
-.i-lucide-wind { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2'/%3E%3Cpath d='M9.6 4.6A2 2 0 1 1 11 8H2'/%3E%3Cpath d='M12.6 19.4A2 2 0 1 0 14 16H2'/%3E%3C/svg%3E"); }
-.i-lucide-check-circle { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E"); }
 </style>

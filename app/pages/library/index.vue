@@ -68,16 +68,23 @@ function isCategoryExpanded(tag) {
 
 <template>
   <div class="p-6 max-w-4xl mx-auto pb-32 min-h-screen">
-    <header class="mb-10 flex flex-col gap-1">
-      <h1 class="text-4xl font-black italic uppercase tracking-tighter">Discovery</h1>
-      <p class="text-orange-500 font-black uppercase text-[10px] tracking-widest -mt-1">Workout Library & History</p>
+    <header class="mb-10 flex items-start justify-between">
+      <div class="flex flex-col gap-1">
+        <h1 class="text-4xl font-black italic uppercase tracking-tighter">Discovery</h1>
+        <p class="text-orange-500 font-black uppercase text-[10px] tracking-widest -mt-1">Workout Library & History</p>
+        <NuxtLink to="/admin/library" class="text-[10px] font-bold text-zinc-500 hover:text-orange-500 transition-colors uppercase tracking-widest mt-2 flex items-center gap-2">
+          <div class="h-3 w-3 icon-mask i-lucide-plus-square"></div>
+          Import Workouts
+        </NuxtLink>
+      </div>
+      <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-16 w-16 object-contain grayscale-[0.2] brightness-125" />
     </header>
 
     <!-- Search Bar -->
     <div class="mb-10">
       <div class="relative group">
         <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-zinc-500 group-focus-within:text-orange-500 transition-colors">
-          <div class="h-5 w-5 i-lucide-search"></div>
+          <div class="h-5 w-5 icon-mask i-lucide-search"></div>
         </div>
         <input 
           v-model="searchQuery"
@@ -103,7 +110,7 @@ function isCategoryExpanded(tag) {
           <div class="flex items-center gap-3">
             <span class="text-[10px] font-black text-zinc-700 bg-zinc-900 px-3 py-1 rounded-full group-hover:text-zinc-400 transition-colors">{{ list.length }} Sessions</span>
             <div 
-              class="h-5 w-5 i-lucide-chevron-right transition-transform duration-300"
+              class="h-5 w-5 icon-mask i-lucide-chevron-right transition-transform duration-300"
               :class="isCategoryExpanded(tag) ? 'rotate-90 text-orange-500' : 'text-zinc-700'"
             ></div>
           </div>
@@ -119,7 +126,7 @@ function isCategoryExpanded(tag) {
           >
             <!-- Completion Badge -->
             <div v-if="workout.isCompleted" class="absolute top-0 right-0 py-1 px-4 bg-green-500/10 border-b border-l border-green-500/20 rounded-bl-2xl flex items-center gap-2">
-              <div class="h-3 w-3 i-lucide-check-circle text-green-500"></div>
+              <div class="h-3 w-3 icon-mask i-lucide-check-circle text-green-500"></div>
               <span class="text-[8px] font-black uppercase text-green-500">Completed (x{{ workout.timesCompleted }})</span>
             </div>
 
@@ -132,9 +139,9 @@ function isCategoryExpanded(tag) {
               </div>
 
               <div class="flex items-center gap-4 text-[10px] font-black uppercase text-zinc-600">
-                <div class="flex items-center gap-1.5"><div class="h-3 w-3 i-lucide-clock"></div>{{ workout.durationMinutes }} Min</div>
-                <div class="flex items-center gap-1.5"><div class="h-3 w-3 i-lucide-activity"></div>Lvl {{ workout.difficulty }}</div>
-                <div class="flex items-center gap-1.5"><div class="h-3 w-3 i-lucide-award"></div>{{ workout.format }}</div>
+                <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-clock"></div>{{ workout.durationMinutes }} Min</div>
+                <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-activity"></div>Lvl {{ workout.difficulty }}</div>
+                <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-award"></div>{{ workout.format }}</div>
               </div>
             </div>
 
@@ -181,11 +188,5 @@ function isCategoryExpanded(tag) {
 </template>
 
 <style scoped>
-.i-lucide-search { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E"); }
-.i-lucide-clock { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E"); }
-.i-lucide-activity { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-4l-3 9L9 3l-3 9H2'/%3E%3C/svg%3E"); }
-.i-lucide-award { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526'/%3E%3Ccircle cx='12' cy='8' r='6'/%3E%3C/svg%3E"); }
-.i-lucide-check-circle { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E"); }
 .i-lucide-star-filled { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23f97316' stroke='%23f97316' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E"); }
-.i-lucide-star { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E"); }
 </style>
