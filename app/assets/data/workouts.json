@@ -1982,577 +1982,580 @@
         }
       ]
     },
-  {
-    title: "One Bell Wonder",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning", "full_body"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Snatch", reps: 8 },
-          { name: "Military Press", reps: 3 },
-          { name: "Goblet Squat", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Simple Not Easy Snatch Flow",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning", "power"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Snatch", reps: 10 },
-          { name: "Military Press", reps: 1 },
-          { name: "Goblet Squat", reps: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Strength Aerobics",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 3,
-    focus: ["strength", "conditioning"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Single Arm Clean", reps: 1 },
-          { name: "Military Press", reps: 1 },
-          { name: "Racked Goblet Squat", reps: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Chamber",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "legs", "upper_body"],
-    format: "Intervals",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        rules: { work: "30s", rest: "30s" },
-        exercises: [{ name: "Lunge to Overhead Press" }]
-      }
-    ]
-  },
-  {
-    title: "Road Work",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "legs"],
-    format: "EMOM",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Push-up", reps: "progressive" },
-          { name: "Goblet Squat", reps: "progressive" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Circuit Board",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "Circuit",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Push Press", reps: 5 },
-          { name: "Goblet Squat", reps: 5 },
-          { name: "Start-Stop Swing", reps: 5 },
-          { name: "Pull-up / Row", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Lower Body Finisher",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning", "legs"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Tempo Goblet Squat", reps: 8 },
-          { name: "Start-Stop Swing", reps: 8 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Criss Cross",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "coordination"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Single Arm Swing", reps: 1 },
-          { name: "Single Arm Clean", reps: 1 },
-          { name: "Military Press", reps: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Descent",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Push-up", reps: "20-15-10-5" },
-          { name: "Kettlebell Swing", reps: "20-15-10-5" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Ghost",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 5 },
-          { name: "Staggered Squat", reps: 5 },
-          { name: "Military Press", reps: 5 }
-        ]
-      }
-    ]
-  },
+    {
+      "title": "One Bell Wonder",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning", "full_body"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Snatch", "reps": 8 },
+            { "name": "Military Press", "reps": 3 },
+            { "name": "Goblet Squat", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Simple Not Easy Snatch Flow",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning", "power"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Snatch", "reps": 10 },
+            { "name": "Military Press", "reps": 1 },
+            { "name": "Goblet Squat", "reps": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Strength Aerobics",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 3,
+      "focus": ["strength", "conditioning"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Single Arm Clean", "reps": 1 },
+            { "name": "Military Press", "reps": 1 },
+            { "name": "Racked Goblet Squat", "reps": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Chamber",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "legs", "upper_body"],
+      "format": "Intervals",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "rules": { "work": "30s", "rest": "30s" },
+          "exercises": [
+            { "name": "Lunge to Overhead Press" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Road Work",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "legs"],
+      "format": "EMOM",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Push-up", "reps": "progressive" },
+            { "name": "Goblet Squat", "reps": "progressive" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Circuit Board",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "Circuit",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Push Press", "reps": 5 },
+            { "name": "Goblet Squat", "reps": 5 },
+            { "name": "Start-Stop Swing", "reps": 5 },
+            { "name": "Pull-up / Row", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Lower Body Finisher",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning", "legs"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Tempo Goblet Squat", "reps": 8 },
+            { "name": "Start-Stop Swing", "reps": 8 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Criss Cross",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "coordination"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Single Arm Swing", "reps": 1 },
+            { "name": "Single Arm Clean", "reps": 1 },
+            { "name": "Military Press", "reps": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Descent",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Push-up", "reps": "20-15-10-5" },
+            { "name": "Kettlebell Swing", "reps": "20-15-10-5" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Ghost",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 5 },
+            { "name": "Staggered Squat", "reps": 5 },
+            { "name": "Military Press", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Revolver",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 1 },
+            { "name": "Clean", "reps": 1 },
+            { "name": "Squat Thrust", "reps": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Single Arm Blitz",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "power"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 5 },
+            { "name": "Clean & Press", "reps": 5 },
+            { "name": "Snatch", "reps": 5 },
+            { "name": "Racked Front Squat", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quintuplets",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 1 },
+            { "name": "Clean", "reps": 1 },
+            { "name": "Military Press", "reps": 1 },
+            { "name": "Snatch", "reps": 1 },
+            { "name": "Racked Front Squat", "reps": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Booster Shot #2",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 10 },
+            { "name": "Goblet Squat", "reps": 5 },
+            { "name": "Push-up", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Swings + Push Ups",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 10 },
+            { "name": "Push-up", "reps": 10 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Basics",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["conditioning", "technique"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 5 },
+            { "name": "Snatch", "reps": 2 },
+            { "name": "Clean & Press", "reps": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Swing and Squat Ladder",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "legs"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 10 },
+            { "name": "Goblet Squat", "reps": "10→1" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Snatch Technique KWOW",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 3,
+      "focus": ["technique", "power"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "Snatch", "reps": "ascending" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "High Voltage / Sprints",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 5,
+      "focus": ["conditioning", "power"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 5 },
+            { "name": "Clean", "reps": 5 },
+            { "name": "High Pull", "reps": 5 },
+            { "name": "Military Press", "reps": 5 },
+            { "name": "Snatch", "reps": 5 },
+            { "name": "Sprint", "reps": "50m" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "9 Minute Workout from Hell",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 9,
+      "difficulty": 5,
+      "focus": ["conditioning"],
+      "format": "Timed Circuit",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 9,
+          "exercises": [
+            { "name": "One-arm Swing", "duration": "30s" },
+            { "name": "One-arm Clean", "duration": "30s" },
+            { "name": "One-arm Snatch", "duration": "30s" },
+            { "name": "One-arm Push Press", "duration": "30s" },
+            { "name": "Reverse Lunge", "duration": "30s" },
+            { "name": "Single-leg Deadlift", "duration": "30s" },
+            { "name": "Swing Burpee", "duration": "60s" },
+            { "name": "Plank", "duration": "60s" },
+            { "name": "Thruster", "duration": "30s" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Descent into Pain",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 5,
+      "focus": ["conditioning"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": "10→1" },
+            { "name": "Goblet Squat", "reps": "10→1" },
+            { "name": "Crush Curl", "reps": "10→1" },
+            { "name": "Crush Push-up", "reps": "10→1" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kettlebell Inferno",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 5,
+      "focus": ["conditioning", "full_body"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": "2-10-2" },
+            { "name": "One-arm Swing", "reps": "R+L" },
+            { "name": "Snatch", "reps": "R+L" },
+            { "name": "Thruster", "reps": "R+L" },
+            { "name": "Row", "reps": "R+L" },
+            { "name": "Push-up", "reps": "variable" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Quick Hard Hitter",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 5 },
+            { "name": "Clean & Press", "reps": 5 },
+            { "name": "Snatch", "reps": 5 },
+            { "name": "Racked Goblet Squat", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Super Snatchtastic",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning", "power"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 10 },
+            { "name": "Snatch", "reps": 5, "side": "each" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fresh Off the Yacht",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 15,
+      "difficulty": 4,
+      "focus": ["conditioning", "full_body"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 15,
+          "exercises": [
+            { "name": "One-arm Swing", "reps": 5 },
+            { "name": "Clean", "reps": 5 },
+            { "name": "Snatch", "reps": 5 },
+            { "name": "Jerk", "reps": 5 },
+            { "name": "Reverse Lunge", "reps": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Hellion",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 5,
+      "focus": ["conditioning", "power"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Two-hand Swing", "reps": "2→10→2" },
+            { "name": "One-hand Swing", "reps": "R+L" },
+            { "name": "Thruster", "reps": "R+L" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reverse Fibonacci",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning"],
+      "format": "Rounds",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": 8 },
+            { "name": "Goblet Squat", "reps": 5 },
+            { "name": "Swing", "reps": 5 },
+            { "name": "Front Squat", "reps": 3 },
+            { "name": "Swing", "reps": 3 },
+            { "name": "Squat", "reps": 2 },
+            { "name": "Swing", "reps": 2 },
+            { "name": "Squat", "reps": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quick and Sweaty",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 4,
+      "focus": ["conditioning"],
+      "format": "Ladder",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Kettlebell Swing", "reps": "10-15-20" },
+            { "name": "Bent Over Row", "reps": 5, "side": "each" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reverse Fibonacci 2.0",
+      "source": "Racked & Loaded – Pat Flynn",
+      "durationMinutes": 20,
+      "difficulty": 5,
+      "focus": ["strength", "conditioning"],
+      "format": "AMRAP",
+      "blocks": [
+        {
+          "type": "main",
+          "duration_minutes": 20,
+          "exercises": [
+            { "name": "Double Clean", "reps": 8 },
+            { "name": "Push-up on Kettlebells", "reps": 5 },
+            { "name": "Double Clean", "reps": 5 },
+            { "name": "Push-up", "reps": 3 },
+            { "name": "Double Clean", "reps": 3 },
+            { "name": "Push-up", "reps": 2 },
+            { "name": "Double Clean", "reps": 2 },
+            { "name": "Push-up", "reps": 1 }
+          ]
+        }
+      ]
+    }
 
-  {
-    title: "The Revolver",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 1 },
-          { name: "Clean", reps: 1 },
-          { name: "Squat Thrust", reps: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Single Arm Blitz",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "power"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 5 },
-          { name: "Clean & Press", reps: 5 },
-          { name: "Snatch", reps: 5 },
-          { name: "Racked Front Squat", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Quintuplets",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 1 },
-          { name: "Clean", reps: 1 },
-          { name: "Military Press", reps: 1 },
-          { name: "Snatch", reps: 1 },
-          { name: "Racked Front Squat", reps: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Booster Shot #2",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 10 },
-          { name: "Goblet Squat", reps: 5 },
-          { name: "Push-up", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Swings + Push Ups",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 10 },
-          { name: "Push-up", reps: 10 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Basics",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["conditioning", "technique"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 5 },
-          { name: "Snatch", reps: 2 },
-          { name: "Clean & Press", reps: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Swing and Squat Ladder",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "legs"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 10 },
-          { name: "Goblet Squat", reps: "10→1" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Snatch Technique KWOW",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 3,
-    focus: ["technique", "power"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "Snatch", reps: "ascending" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "High Voltage / Sprints",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 5,
-    focus: ["conditioning", "power"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "One-arm Swing", reps: 5 },
-          { name: "Clean", reps: 5 },
-          { name: "High Pull", reps: 5 },
-          { name: "Military Press", reps: 5 },
-          { name: "Snatch", reps: 5 },
-          { name: "Sprint", reps: "50m" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "9 Minute Workout from Hell",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 9,
-    difficulty: 5,
-    focus: ["conditioning"],
-    format: "Timed Circuit",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 9,
-        exercises: [
-          { name: "One-arm Swing", duration: "30s" },
-          { name: "One-arm Clean", duration: "30s" },
-          { name: "One-arm Snatch", duration: "30s" },
-          { name: "One-arm Push Press", duration: "30s" },
-          { name: "Reverse Lunge", duration: "30s" },
-          { name: "Single-leg Deadlift", duration: "30s" },
-          { name: "Swing Burpee", duration: "60s" },
-          { name: "Plank", duration: "60s" },
-          { name: "Thruster", duration: "30s" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Descent into Pain",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 5,
-    focus: ["conditioning"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: "10→1" },
-          { name: "Goblet Squat", reps: "10→1" },
-          { name: "Crush Curl", reps: "10→1" },
-          { name: "Crush Push-up", reps: "10→1" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Kettlebell Inferno",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 5,
-    focus: ["conditioning", "full_body"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: "2-10-2" },
-          { name: "One-arm Swing", reps: "R+L" },
-          { name: "Snatch", reps: "R+L" },
-          { name: "Thruster", reps: "R+L" },
-          { name: "Row", reps: "R+L" },
-          { name: "Push-up", reps: "variable" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Quick Hard Hitter",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 5 },
-          { name: "Clean & Press", reps: 5 },
-          { name: "Snatch", reps: 5 },
-          { name: "Racked Goblet Squat", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Super Snatchtastic",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning", "power"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 10 },
-          { name: "Snatch", reps: 5, side: "each" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Fresh Off the Yacht",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 15,
-    difficulty: 4,
-    focus: ["conditioning", "full_body"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 15,
-        exercises: [
-          { name: "One-arm Swing", reps: 5 },
-          { name: "Clean", reps: 5 },
-          { name: "Snatch", reps: 5 },
-          { name: "Jerk", reps: 5 },
-          { name: "Reverse Lunge", reps: 5 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "The Hellion",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 5,
-    focus: ["conditioning", "power"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Two-hand Swing", reps: "2→10→2" },
-          { name: "One-hand Swing", reps: "R+L" },
-          { name: "Thruster", reps: "R+L" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Reverse Fibonacci",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning"],
-    format: "Rounds",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: 8 },
-          { name: "Goblet Squat", reps: 5 },
-          { name: "Swing", reps: 5 },
-          { name: "Front Squat", reps: 3 },
-          { name: "Swing", reps: 3 },
-          { name: "Squat", reps: 2 },
-          { name: "Swing", reps: 2 },
-          { name: "Squat", reps: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Quick and Sweaty",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 4,
-    focus: ["conditioning"],
-    format: "Ladder",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Kettlebell Swing", reps: "10-15-20" },
-          { name: "Bent Over Row", reps: 5, side: "each" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Reverse Fibonacci 2.0",
-    source: "Racked & Loaded – Pat Flynn",
-    durationMinutes: 20,
-    difficulty: 5,
-    focus: ["strength", "conditioning"],
-    format: "AMRAP",
-    blocks: [
-      {
-        type: "main",
-        duration_minutes: 20,
-        exercises: [
-          { name: "Double Clean", reps: 8 },
-          { name: "Push-up on Kettlebells", reps: 5 },
-          { name: "Double Clean", reps: 5 },
-          { name: "Push-up", reps: 3 },
-          { name: "Double Clean", reps: 3 },
-          { name: "Push-up", reps: 2 },
-          { name: "Double Clean", reps: 2 },
-          { name: "Push-up", reps: 1 }
-        ]
-      }
-    ]
-  }
 
 
+    
   ]
 ]
