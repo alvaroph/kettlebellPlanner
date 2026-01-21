@@ -1,6 +1,8 @@
 <script setup>
-const { requestPersistence } = useData();
-onMounted(() => {
+var data = useData();
+var requestPersistence = data.requestPersistence;
+
+onMounted(function () {
   requestPersistence();
 });
 </script>

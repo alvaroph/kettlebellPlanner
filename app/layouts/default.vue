@@ -21,6 +21,11 @@ const route = useRoute();
         <span class="text-[10px] font-black uppercase tracking-widest">Plan</span>
       </NuxtLink>
 
+      <NuxtLink to="/stats" class="flex flex-col items-center gap-1 transition-all active:scale-95" :class="route.path === '/stats' ? 'text-orange-500' : 'text-zinc-500'">
+        <div class="h-6 w-6 icon-mask i-lucide-bar-chart"></div>
+        <span class="text-[10px] font-black uppercase tracking-widest">Stats</span>
+      </NuxtLink>
+
       <NuxtLink to="/library" class="flex flex-col items-center gap-1 transition-all active:scale-95" :class="route.path === '/library' ? 'text-orange-500' : 'text-zinc-500'">
         <div class="h-6 w-6 icon-mask i-lucide-book-open"></div>
         <span class="text-[10px] font-black uppercase tracking-widest">Library</span>

@@ -10,10 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@capacitor/android": "^8.0.1",
+    "@capacitor/cli": "^8.0.1",
+    "@capacitor/core": "^8.0.1",
     "@pinia/nuxt": "^0.11.3",
-    "@prisma/client": "5.22.0",
     "@vite-pwa/nuxt": "latest",
-    "better-sqlite3": "latest",
     "dexie": "^4.2.1",
     "lucide-vue-next": "latest",
     "nuxt": "^3.13.0",
@@ -22,10 +23,6 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "latest",
-    "prisma": "5.22.0"
-  },
-  "prisma": {
-    "seed": "node prisma/seed.js"
+    "@nuxtjs/tailwindcss": "latest"
   }
 }

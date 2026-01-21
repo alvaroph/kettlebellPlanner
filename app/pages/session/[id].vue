@@ -20,10 +20,43 @@ const expandedWorkoutId = ref(null);
 
 const feedback = reactive({
   rating: 5,
-  effort: 3,
+  difficulty: 3,
   repeat: true,
   notes: ''
 });
+
+const timer = reactive({
+  isRunning: false,
+  elapsed: 0,
+  interval: null,
+  startTime: null
+});
+
+const formattedTime = computed(() => {
+  const mins = Math.floor(timer.elapsed / 60).toString().padStart(2, '0');
+  const secs = (timer.elapsed % 60).toString().padStart(2, '0');
+  return `${mins}:${secs}`;
+});
+
+function toggleTimer() {
+  if (timer.isRunning) {
+    // Pause
+    clearInterval(timer.interval);
+    timer.isRunning = false;
+  } else {
+    // Start/Resume
+    timer.isRunning = true;
+    timer.interval = setInterval(() => {
+      timer.elapsed++;
+    }, 1000);
+  }
+}
+
+function stopTimer() {
+  if (timer.interval) clearInterval(timer.interval);
+  timer.isRunning = false;
+  showFeedback.value = true;
+}
 
 const isSubmitting = ref(false);
 
@@ -34,8 +67,9 @@ async function completeSession() {
     await completeSessionRemote({
       sessionId: sessionId,
       workoutId: selectedWorkout.value.id,
+      durationSeconds: timer.elapsed,
       rating: feedback.rating,
-      effort: feedback.effort,
+      difficulty: feedback.difficulty || 3,
       repeatPreference: feedback.repeat,
       notes: feedback.notes
     });
@@ -59,6 +93,35 @@ function togglePreview(id) {
   } else {
     expandedWorkoutId.value = id;
   }
+}
+
+const completedSets = reactive({});
+
+function incrementSet(blockIdx, exIdx, targetSets) {
+  const key = `${blockIdx}-${exIdx}`;
+  if (!completedSets[key]) completedSets[key] = 0;
+  
+  if (targetSets && !isNaN(targetSets)) {
+    if (completedSets[key] < targetSets) {
+      completedSets[key]++;
+    } else {
+      completedSets[key] = 0; // Reset or leave as is? User said "contar", usually toggle or reset. 
+    }
+  } else {
+    completedSets[key]++; // Indefinite for "max" or missing sets
+  }
+}
+
+function getSetCount(blockIdx, exIdx) {
+  return completedSets[`${blockIdx}-${exIdx}`] || 0;
+}
+
+function isExCompleted(blockIdx, exIdx, targetSets) {
+  const count = getSetCount(blockIdx, exIdx);
+  if (targetSets && !isNaN(targetSets)) {
+    return count >= targetSets;
+  }
+  return count > 0;
 }
 </script>
 
@@ -140,12 +203,42 @@ function togglePreview(id) {
       <!-- Stage 2: Execution -->
       <div v-else-if="!showFeedback" class="animate-in zoom-in-95 duration-500">
         <header class="flex flex-col gap-6 mb-10 items-center text-center">
-          <button @click="selectedWorkout = null" class="text-[10px] font-black uppercase text-zinc-600 border border-zinc-800 px-4 py-2 rounded-full hover:text-white transition-colors">Change Session</button>
-          <div>
-            <h1 class="text-4xl font-black italic uppercase tracking-tighter">{{ selectedWorkout.title }}</h1>
-            <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest mt-2">{{ selectedWorkout.format }} // {{ selectedWorkout.durationMinutes }} MINS</p>
+          <!-- Timer Display -->
+          <div class="flex flex-col items-center gap-4">
+             <div class="text-6xl font-black font-mono tracking-tighter tabular-nums" :class="timer.isRunning ? 'text-white' : 'text-zinc-600'">
+               {{ formattedTime }}
+             </div>
+             <button 
+               @click="toggleTimer"
+               class="px-8 py-3 rounded-full font-black uppercase text-xs tracking-widest transition-all"
+               :class="timer.isRunning 
+                 ? 'bg-zinc-900 text-zinc-400 border border-zinc-700 hover:text-white hover:border-white' 
+                 : 'bg-orange-600 text-white shadow-lg shadow-orange-500/20 hover:scale-105'"
+             >
+               {{ timer.isRunning ? 'Pause Timer' : (timer.elapsed > 0 ? 'Resume' : 'Start Workout') }}
+             </button>
+          </div>
+
+          <div class="mt-4">
+             <button v-if="timer.elapsed === 0" @click="selectedWorkout = null" class="text-[10px] font-black uppercase text-zinc-600 border border-zinc-800 px-4 py-2 rounded-full hover:text-white transition-colors">Change Session</button>
+             <h1 class="text-4xl font-black italic uppercase tracking-tighter mt-4">{{ selectedWorkout.title }}</h1>
+             <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest mt-2">{{ selectedWorkout.format }} // {{ selectedWorkout.durationMinutes }} MINS</p>
           </div>
         </header>
+
+        <!-- Workout Tips -->
+        <div v-if="selectedWorkout.tips" class="bg-orange-500/10 border border-orange-500/20 p-6 rounded-3xl mb-10 flex gap-4 items-start animate-in slide-in-from-top-4 duration-700 relative overflow-hidden group">
+           <!-- Decorative glow -->
+           <div class="absolute -top-10 -right-10 h-32 w-32 bg-orange-500/10 blur-3xl group-hover:bg-orange-500/20 transition-all duration-1000"></div>
+
+           <div class="h-8 w-8 bg-orange-500/20 rounded-full flex items-center justify-center shrink-0 border border-orange-500/30">
+              <div class="h-4 w-4 icon-mask i-lucide-lightbulb text-orange-500"></div>
+           </div>
+           <div class="flex flex-col gap-1.5 relative z-10">
+              <span class="text-[10px] font-black uppercase tracking-widest text-orange-500 italic">Coach Intelligence</span>
+              <p class="text-sm italic text-zinc-200 font-medium leading-relaxed">"{{ selectedWorkout.tips }}"</p>
+           </div>
+        </div>
 
         <div class="flex flex-col gap-8">
           <section v-for="(block, idx) in parseBlocks(selectedWorkout.blocks)" :key="idx" class="flex flex-col gap-4">
@@ -154,18 +247,25 @@ function togglePreview(id) {
             <div class="flex flex-col gap-2">
               <div v-for="(ex, exIdx) in block.exercises" :key="exIdx" class="glass-card flex items-center justify-between group overflow-hidden relative">
                 <div class="relative z-10">
-                  <h4 class="font-black italic uppercase italic text-lg">{{ ex.name }}</h4>
+                  <h4 class="font-black italic uppercase italic text-lg transition-colors" :class="isExCompleted(idx, exIdx, ex.sets) ? 'text-zinc-500' : ''">{{ ex.name }}</h4>
                   <p class="text-zinc-500 font-bold text-xs uppercase">{{ ex.reps }} <span v-if="ex.sets">x {{ ex.sets }} Sets</span></p>
                 </div>
-                <!-- Interactive visual -->
-                <div class="h-12 w-12 bg-zinc-950 rounded-2xl flex items-center justify-center text-zinc-700 group-hover:bg-zinc-100 group-hover:text-zinc-950 transition-all duration-500 relative z-10">
-                   <div class="h-6 w-6 icon-mask i-lucide-check"></div>
+                <!-- Interactive visual: Set Clicker -->
+                <div 
+                  @click.stop="incrementSet(idx, exIdx, ex.sets)"
+                  class="h-12 w-12 bg-zinc-950 rounded-2xl flex items-center justify-center transition-all duration-500 relative z-10 cursor-pointer select-none"
+                  :class="isExCompleted(idx, exIdx, ex.sets) ? 'text-green-500 bg-green-500/10 border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.1)]' : 'text-zinc-700 border border-zinc-900 hover:border-zinc-700'"
+                >
+                   <div v-if="getSetCount(idx, exIdx) > 0" class="absolute -top-2 -right-2 bg-orange-600 text-white text-[10px] font-black h-5 w-5 rounded-full flex items-center justify-center shadow-lg border-2 border-zinc-950 animate-in zoom-in-50 duration-300">
+                     {{ getSetCount(idx, exIdx) }}
+                   </div>
+                   <div class="h-6 w-6 icon-mask i-lucide-check-circle" :class="isExCompleted(idx, exIdx, ex.sets) ? 'bg-green-500' : 'bg-current'"></div>
                 </div>
               </div>
             </div>
           </section>
 
-          <button @click="showFeedback = true" class="btn-primary w-full mt-4 h-20 text-2xl shadow-2xl shadow-orange-500/20">
+          <button @click="stopTimer" class="btn-primary w-full mt-4 h-20 text-2xl shadow-2xl shadow-orange-500/20">
             FINISH SESSION
           </button>
         </div>
@@ -182,18 +282,39 @@ function togglePreview(id) {
         </header>
 
         <div class="flex flex-col gap-8">
-          <!-- Rating -->
+          <!-- Difficulty -->
           <div class="flex flex-col gap-3">
-            <label class="text-[10px] font-black uppercase tracking-widest text-zinc-500 text-center">Difficulty Rating</label>
+            <label class="text-[10px] font-black uppercase tracking-widest text-zinc-500 text-center">Perceived Difficulty (RPE)</label>
             <div class="flex justify-between gap-2">
               <button 
                 v-for="i in 5" 
                 :key="i"
-                @click="feedback.rating = i"
-                class="h-14 flex-1 rounded-2xl font-black text-xl transition-all"
-                :class="feedback.rating === i ? 'bg-white text-zinc-950 scale-105' : 'bg-zinc-900 text-zinc-600'"
+                @click="feedback.difficulty = i"
+                class="h-14 flex-1 rounded-2xl font-black text-xl transition-all border-2"
+                :class="feedback.difficulty === i 
+                  ? 'bg-red-500/10 border-red-500 text-red-500 scale-105' 
+                  : 'bg-zinc-900 border-zinc-800 text-zinc-600 hover:border-zinc-700'"
               >
                 {{ i }}
+              </button>
+            </div>
+            <div class="flex justify-between px-1 text-[10px] font-black uppercase text-zinc-700">
+              <span>Easy</span>
+              <span>Max Effort</span>
+            </div>
+          </div>
+
+          <!-- Satisfaction Rating -->
+          <div class="flex flex-col gap-3">
+            <label class="text-[10px] font-black uppercase tracking-widest text-zinc-500 text-center">Satisfaction (Stars)</label>
+            <div class="flex justify-center gap-4">
+              <button 
+                v-for="i in 5" 
+                :key="i"
+                @click="feedback.rating = i"
+                class="transition-all hover:scale-110 active:scale-90"
+              >
+                <div class="h-10 w-10 icon-mask i-lucide-star" :class="i <= feedback.rating ? 'bg-orange-500' : 'bg-zinc-700'"></div>
               </button>
             </div>
           </div>

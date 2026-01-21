@@ -1,2957 +1,2661 @@
 [
   {
     "title": "KB Fundamentals: Strength",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Manual",
     "durationMinutes": 30,
     "difficulty": 2,
-    "focus": [
-      "strength"
-    ],
+    "tips": "Focus on keeping a vertical spine during the squats. Don't rush the descent.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "warmup",
         "duration_minutes": 5,
         "exercises": [
-          {
-            "name": "Halos",
-            "reps": 10
-          },
-          {
-            "name": "Slingshot",
-            "reps": 10
-          }
+          { "name": "Halos", "reps": 10 },
+          { "name": "Slingshot", "reps": 10 }
         ]
       },
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Goblet Squat",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "KB Overhead Press",
-            "reps": 8,
-            "sets": 4
-          }
+          { "name": "KB Goblet Squat", "reps": 10, "sets": 4 },
+          { "name": "KB Overhead Press", "reps": 8, "sets": 4 }
         ]
       }
     ]
   },
   {
     "title": "The 300 Swings Challenge",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Online",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Manage your grip strength. Shake out your hands during the rest intervals.",
     "format": "EMOM",
     "blocks": [
       {
         "type": "warmup",
         "duration_minutes": 5,
         "exercises": [
-          {
-            "name": "Joint Rotation",
-            "reps": 1
-          }
+          { "name": "Joint Rotation", "reps": 1 }
         ]
       },
       {
         "type": "main",
         "duration_minutes": 15,
-        "rules": {
-          "style": "EMOM",
-          "every": "1 minute",
-          "task": "20 Swings"
-        }
+        "rules": { "style": "EMOM", "every": "1 minute", "task": "20 Swings" }
       }
     ]
   },
   {
     "title": "Mobility Flow A",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Manual",
     "durationMinutes": 15,
     "difficulty": 1,
-    "focus": [
-      "mobility"
-    ],
+    "tips": "Move smoothly between positions. Use a light weight or no weight if needed.",
     "format": "Flow",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "World's Greatest Stretch",
-            "reps": 5
-          },
-          {
-            "name": "Cossack Squat",
-            "reps": 10
-          }
+          { "name": "World's Greatest Stretch", "reps": 5 },
+          { "name": "Cossack Squat", "reps": 10 }
         ]
       }
     ]
   },
   {
     "title": "Core Crusher AMRAP",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Book",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "core"
-    ],
+    "tips": "Keep your hips square to the ground during the plank pullthrough. Don't twist.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "KB Plank Pullthrough",
-            "reps": 10
-          },
-          {
-            "name": "KB Russian Twist",
-            "reps": 20
-          }
+          { "name": "KB Plank Pullthrough", "reps": 10 },
+          { "name": "KB Russian Twist", "reps": 20 }
         ]
       }
     ]
   },
   {
     "title": "Heavy Carry Medley",
+    "category": "strength",
+    "kettlebells": "double",
     "source": "Manual",
     "durationMinutes": 25,
     "difficulty": 4,
-    "focus": [
-      "strength"
-    ],
+    "tips": "Imagine a string pulling the top of your head to the ceiling. Walk tall.",
     "format": "Distance",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Farmer's Walk",
-            "reps": "40m",
-            "sets": 5
-          },
-          {
-            "name": "Rack Carry",
-            "reps": "20m",
-            "sets": 5
-          }
+          { "name": "Farmer's Walk", "reps": "40m", "sets": 5 },
+          { "name": "Rack Carry", "reps": "20m", "sets": 5 }
         ]
       }
     ]
   },
   {
     "title": "Full Body EMOM Builder",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Custom",
     "durationMinutes": 20,
     "difficulty": 3,
-    "focus": [
-      "strength",
-      "conditioning"
-    ],
+    "tips": "This is a 4-minute cycle. Pace yourself so you have at least 30s rest after the squats.",
     "format": "EMOM",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
-        "rules": {
-          "style": "EMOM",
-          "cycle": "4 minutes"
-        },
+        "rules": { "style": "EMOM", "cycle": "4 minutes" },
         "exercises": [
-          {
-            "name": "KB Swing",
-            "reps": 15
-          },
-          {
-            "name": "KB Push Press",
-            "reps": 8
-          },
-          {
-            "name": "KB Goblet Squat",
-            "reps": 10
-          },
-          {
-            "name": "Rest",
-            "reps": 0
-          }
+          { "name": "KB Swing", "reps": 15 },
+          { "name": "KB Push Press", "reps": 8 },
+          { "name": "KB Goblet Squat", "reps": 10 },
+          { "name": "Rest", "reps": 0 }
         ]
       }
     ]
   },
   {
     "title": "Lower Body Strength Day",
+    "category": "strength",
+    "kettlebells": "double",
     "source": "Manual",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "legs"
-    ],
+    "tips": "For Front Squats, keep your elbows high to prevent the bells from pulling you forward.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "warmup",
         "duration_minutes": 5,
         "exercises": [
-          {
-            "name": "Glute Bridge",
-            "reps": 15
-          }
+          { "name": "Glute Bridge", "reps": 15 }
         ]
       },
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Front Squat",
-            "reps": 8,
-            "sets": 5
-          },
-          {
-            "name": "KB Reverse Lunge",
-            "reps": 10,
-            "sets": 4
-          }
+          { "name": "KB Front Squat", "reps": 8, "sets": 5 },
+          { "name": "KB Reverse Lunge", "reps": 10, "sets": 4 }
         ]
       }
     ]
   },
   {
     "title": "Quick Conditioning Circuit",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Online",
     "durationMinutes": 12,
     "difficulty": 3,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Transitions should be immediate. Rest only after the Mountain Climbers.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 12,
         "exercises": [
-          {
-            "name": "KB Swing",
-            "reps": 20
-          },
-          {
-            "name": "Burpee",
-            "reps": 10
-          },
-          {
-            "name": "Mountain Climber",
-            "reps": 20
-          }
+          { "name": "KB Swing", "reps": 20 },
+          { "name": "Burpee", "reps": 10 },
+          { "name": "Mountain Climber", "reps": 20 }
         ]
       }
     ]
   },
   {
     "title": "Upper Body Push/Pull",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Manual",
     "durationMinutes": 25,
     "difficulty": 3,
-    "focus": [
-      "strength",
-      "upper_body"
-    ],
+    "tips": "Squeeze your shoulder blade back at the top of the Row.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Row",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "KB Floor Press",
-            "reps": 8,
-            "sets": 4
-          }
+          { "name": "KB Row", "reps": 10, "sets": 4 },
+          { "name": "KB Floor Press", "reps": 8, "sets": 4 }
         ]
       }
     ]
   },
   {
     "title": "Swing Density Session",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Book",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "posterior_chain"
-    ],
+    "tips": "Every time you set the bell down, shake your arms fast to recover.",
     "format": "Density",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Swing",
-            "reps": 15
-          }
+          { "name": "KB Swing", "reps": 15 }
         ]
       }
     ]
   },
   {
     "title": "Core Stability Builder",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Custom",
     "durationMinutes": 18,
     "difficulty": 2,
-    "focus": [
-      "core"
-    ],
+    "tips": "Focus on breathing behind the shield (brace your abs) during the plank.",
     "format": "Intervals",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 18,
         "exercises": [
-          {
-            "name": "Plank",
-            "reps": "40s"
-          },
-          {
-            "name": "Dead Bug",
-            "reps": 10
-          },
-          {
-            "name": "Side Plank",
-            "reps": "30s"
-          }
+          { "name": "Plank", "reps": "40s" },
+          { "name": "Dead Bug", "reps": 10 },
+          { "name": "Side Plank", "reps": "30s" }
         ]
       }
     ]
   },
   {
     "title": "KB Complex Lite",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Manual",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Do not put the kettlebell down until all three exercises are completed.",
     "format": "Complex",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "KB Deadlift",
-            "reps": 5
-          },
-          {
-            "name": "KB Clean",
-            "reps": 5
-          },
-          {
-            "name": "KB Press",
-            "reps": 5
-          }
+          { "name": "KB Deadlift", "reps": 5 },
+          { "name": "KB Clean", "reps": 5 },
+          { "name": "KB Press", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Recovery & Breath",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Custom",
     "durationMinutes": 10,
     "difficulty": 1,
-    "focus": [
-      "mobility",
-      "recovery"
-    ],
+    "tips": "Use the weight as a counterbalance to sit deeper into the squat.",
     "format": "Flow",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 10,
         "exercises": [
-          {
-            "name": "Deep Squat Hold",
-            "reps": "60s"
-          },
-          {
-            "name": "Breathing Drill",
-            "reps": 5
-          }
+          { "name": "Deep Squat Hold", "reps": "60s" },
+          { "name": "Breathing Drill", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Conditioning Ladder",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Book",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Climb from 1 to 10. If you fail, restart at 1.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Swing",
-            "reps": "1-10"
-          },
-          {
-            "name": "Push-up",
-            "reps": "1-10"
-          }
+          { "name": "KB Swing", "reps": "1-10" },
+          { "name": "Push-up", "reps": "1-10" }
         ]
       }
     ]
   },
   {
     "title": "Technique & Control",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Manual",
     "durationMinutes": 20,
     "difficulty": 2,
-    "focus": [
-      "technique",
-      "strength"
-    ],
+    "tips": "Pause for 1 second at the top of the press to ensure lockout stability.",
     "format": "Controlled Sets",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "KB Clean Technique",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "KB Press Pause",
-            "reps": 5,
-            "sets": 4
-          }
+          { "name": "KB Clean Technique", "reps": 5, "sets": 5 },
+          { "name": "KB Press Pause", "reps": 5, "sets": 4 }
         ]
       }
     ]
   },
   {
-    "title": "Fundamentos de Piernas y Swings",
+    "title": "Legs & Swings Fundamentals",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 2,
-    "focus": [
-      "fundamentals",
-      "legs",
-      "conditioning"
-    ],
+    "tips": "Drive through your heels on the squats.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Squat",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 1,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Squat", "reps": 10, "sets": 4 },
+          { "name": "Swing", "reps": 10, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 1, "sets": 5, "side": "each" },
+          { "name": "Swing (Burnout)", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Fundamentos de Bisagra y Estabilidad",
+    "title": "Hinge & Stability Fundamentals",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 2,
-    "focus": [
-      "fundamentals",
-      "posterior_chain",
-      "core"
-    ],
+    "tips": "Keep a neutral spine. Do not round your back during the deadlift.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Deadlift",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 1,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Deadlift", "reps": 10, "sets": 4 },
+          { "name": "Swing", "reps": 10, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 1, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Práctica Técnica de Balísticos",
+    "title": "Ballistic Technique Practice",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 20,
     "difficulty": 1,
-    "focus": [
-      "fundamentals",
-      "technique"
-    ],
+    "tips": "This is practice, not a workout. Focus on form, not fatigue.",
     "format": "Technique Practice",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Swing 1 mano",
-            "duration": "5-10 min"
-          },
-          {
-            "name": "Clean",
-            "duration": "5-10 min"
-          },
-          {
-            "name": "Press",
-            "duration": "5-10 min"
-          }
+          { "name": "1-Arm Swing", "duration": "5-10 min" },
+          { "name": "Clean", "duration": "5-10 min" },
+          { "name": "Press", "duration": "5-10 min" }
         ]
       }
     ]
   },
   {
-    "title": "Sentadilla en Rack y Control Total",
+    "title": "Rack Squat & Control",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 2,
-    "focus": [
-      "fundamentals",
-      "legs",
-      "full_body"
-    ],
+    "tips": "Keep your elbow tight to your ribs during the rack squat.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Squat en Rack",
-            "reps": 8,
-            "sets": 3
-          },
-          {
-            "name": "Swing",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 1,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Rack Squat", "reps": 8, "sets": 3 },
+          { "name": "Swing", "reps": 10, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 1, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Deadlift Maleta y Resistencia",
+    "title": "Suitcase Deadlift & Stamina",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 3,
-    "focus": [
-      "fundamentals",
-      "posterior_chain",
-      "conditioning"
-    ],
+    "tips": "Fight the rotation. Keep your shoulders square during the suitcase deadlift.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Deadlift Maleta",
-            "reps": 8,
-            "sets": 3,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 2,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Suitcase Deadlift", "reps": 8, "sets": 3, "side": "each" },
+          { "name": "Swing", "reps": 15, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 2, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Sentadilla Base y Potencia Inicial",
+    "title": "Base Squat & Initial Power",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 3,
-    "focus": [
-      "fundamentals",
-      "legs",
-      "conditioning"
-    ],
+    "tips": "Explode up from the bottom of the squat.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Squat",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 2,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Squat", "reps": 10, "sets": 4 },
+          { "name": "Swing", "reps": 15, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 2, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Práctica Técnica de Clean, Press y Snatch",
+    "title": "Clean, Press & Snatch Technique",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 20,
     "difficulty": 1,
-    "focus": [
-      "fundamentals",
-      "technique"
-    ],
+    "tips": "Tame the arc on the snatch to avoid banging your forearm.",
     "format": "Technique Practice",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Clean",
-            "duration": "5-10 min"
-          },
-          {
-            "name": "Press",
-            "duration": "5-10 min"
-          },
-          {
-            "name": "Snatch",
-            "duration": "5-10 min"
-          }
+          { "name": "Clean", "duration": "5-10 min" },
+          { "name": "Press", "duration": "5-10 min" },
+          { "name": "Snatch", "duration": "5-10 min" }
         ]
       }
     ]
   },
   {
-    "title": "Deadlift Sumo y Fuerza Base",
+    "title": "Sumo Deadlift & Base Strength",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 3,
-    "focus": [
-      "fundamentals",
-      "legs",
-      "full_body"
-    ],
+    "tips": "Widen your stance for the sumo deadlift and focus on inner thighs.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Deadlift Sumo",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 2,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": "max",
-            "duration": "1 min"
-          }
+          { "name": "Sumo Deadlift", "reps": 10, "sets": 4 },
+          { "name": "Swing", "reps": 15, "sets": 4 },
+          { "name": "Turkish Get Up", "reps": 2, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": "max", "duration": "1 min" }
         ]
       }
     ]
   },
   {
-    "title": "Empuje y Tracción Clásica",
+    "title": "Classic Push & Pull",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "upper_body",
-      "full_body"
-    ],
+    "tips": "On the bottom-up press, grip the handle as hard as possible for stability.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Clean & Press",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Row",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 3,
-            "sets": 3,
-            "side": "each"
-          },
-          {
-            "name": "Swing 1 mano",
-            "reps": 10,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Flexión Bottom-Up",
-            "reps": "8-10",
-            "sets": 3
-          }
+          { "name": "Clean & Press", "reps": 5, "sets": 5 },
+          { "name": "Row", "reps": 5, "sets": 5 },
+          { "name": "Turkish Get Up", "reps": 3, "sets": 3, "side": "each" },
+          { "name": "1-Arm Swing", "reps": 10, "sets": 4, "side": "each" },
+          { "name": "Bottom-Up Press", "reps": "8-10", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Fuerza de Piernas y Estabilidad",
+    "title": "Leg Strength & Stability",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "legs",
-      "core"
-    ],
+    "tips": "Use a box or bench for the pistol squats if you lack the range of motion.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Squat",
-            "reps": 10,
-            "sets": 5
-          },
-          {
-            "name": "Desplante",
-            "reps": 10,
-            "sets": 5,
-            "side": "each_leg"
-          },
-          {
-            "name": "Squat en Rack",
-            "reps": 8,
-            "sets": 3
-          },
-          {
-            "name": "Swing",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Pistol",
-            "reps": 2,
-            "sets": 3,
-            "side": "each"
-          }
+          { "name": "Squat", "reps": 10, "sets": 5 },
+          { "name": "Lunge", "reps": 10, "sets": 5, "side": "each_leg" },
+          { "name": "Rack Squat", "reps": 8, "sets": 3 },
+          { "name": "Swing", "reps": 15, "sets": 4 },
+          { "name": "Pistol Squat", "reps": 2, "sets": 3, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Empuje Horizontal y Control del Core",
+    "title": "Horizontal Push & Core Control",
+    "category": "muscle",
+    "kettlebells": "double",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "upper_body",
-      "core"
-    ],
+    "tips": "Keep your hips level during the renegade row. Don't let them twist.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Press en el suelo",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Renegade Row",
-            "reps": 5,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Windmill",
-            "reps": 5,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Swing 1 mano",
-            "reps": 10,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Dominada",
-            "reps": "8-10",
-            "sets": 4
-          }
+          { "name": "Floor Press", "reps": 5, "sets": 5 },
+          { "name": "Renegade Row", "reps": 5, "sets": 4, "side": "each" },
+          { "name": "Windmill", "reps": 5, "sets": 4, "side": "each" },
+          { "name": "1-Arm Swing", "reps": 10, "sets": 4, "side": "each" },
+          { "name": "Pull-up", "reps": "8-10", "sets": 4 }
         ]
       }
     ]
   },
   {
-    "title": "Bisagra Pesada y Trabajo Unilateral",
+    "title": "Heavy Hinge & Unilateral Work",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "posterior_chain",
-      "legs"
-    ],
+    "tips": "Focus on balancing on the standing leg during the single leg deadlift.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Deadlift",
-            "reps": 10,
-            "sets": 5
-          },
-          {
-            "name": "Squat en Rack",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Deadlift con 1 pierna",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Levantamiento Turco",
-            "reps": 3,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Desplante",
-            "reps": 10,
-            "sets": 4,
-            "side": "each"
-          }
+          { "name": "Deadlift", "reps": 10, "sets": 5 },
+          { "name": "Rack Squat", "reps": 5, "sets": 5 },
+          { "name": "Single Leg Deadlift", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Turkish Get Up", "reps": 3, "sets": 5, "side": "each" },
+          { "name": "Lunge", "reps": 10, "sets": 4, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Estabilidad y Fuerza Rotacional",
+    "title": "Stability & Rotational Strength",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "core",
-      "full_body"
-    ],
+    "tips": "Keep your eyes on the weight during the windmill.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Windmill",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Row",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Desplante en ocho",
-            "reps": 12,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing 1 mano",
-            "reps": 12,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Flexión Bottom-Up",
-            "reps": "8-10",
-            "sets": 3
-          }
+          { "name": "Windmill", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Row", "reps": 5, "sets": 5 },
+          { "name": "Figure 8 Lunge", "reps": 12, "sets": 5, "side": "each" },
+          { "name": "1-Arm Swing", "reps": 12, "sets": 4, "side": "each" },
+          { "name": "Bottom-Up Push-up", "reps": "8-10", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Fuerza Unilateral de Piernas",
+    "title": "Unilateral Leg Strength",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "legs",
-      "core"
-    ],
+    "tips": "Control the descent on the pistol squat. Don't drop.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Levantamiento Turco",
-            "reps": 2,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Desplante",
-            "reps": 10,
-            "sets": 5,
-            "side": "each_leg"
-          },
-          {
-            "name": "Squat en Rack",
-            "reps": 10,
-            "sets": 5
-          },
-          {
-            "name": "Deadlift con 1 pierna",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Pistol",
-            "reps": 2,
-            "sets": 4,
-            "side": "each"
-          }
+          { "name": "Turkish Get Up", "reps": 2, "sets": 5, "side": "each" },
+          { "name": "Lunge", "reps": 10, "sets": 5, "side": "each_leg" },
+          { "name": "Rack Squat", "reps": 10, "sets": 5 },
+          { "name": "Single Leg Deadlift", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Pistol Squat", "reps": 2, "sets": 4, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Empuje Vertical y Tracción Intensa",
+    "title": "Vertical Push & Intense Pull",
+    "category": "muscle",
+    "kettlebells": "double",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "upper_body"
-    ],
+    "tips": "Maintain a solid plank position during the renegade row.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Press en el suelo",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Renegade Row",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Windmill",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Press",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Dominada",
-            "reps": "8-10",
-            "sets": 4
-          }
+          { "name": "Floor Press", "reps": 5, "sets": 5 },
+          { "name": "Renegade Row", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Windmill", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Press", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Pull-up", "reps": "8-10", "sets": 4 }
         ]
       }
     ]
   },
   {
-    "title": "Fuerza Total de Tren Inferior",
+    "title": "Total Lower Body Strength",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 4,
-    "focus": [
-      "strength",
-      "legs",
-      "full_body"
-    ],
+    "tips": "Keep your chest up during the sumo deadlift.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Deadlift Sumo",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Squat en Rack",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Deadlift Maleta",
-            "reps": 5,
-            "sets": 5
-          },
-          {
-            "name": "Desplante Lateral",
-            "reps": 10,
-            "sets": 3,
-            "side": "each"
-          },
-          {
-            "name": "Pistol",
-            "reps": 2,
-            "sets": 4,
-            "side": "each"
-          }
+          { "name": "Sumo Deadlift", "reps": 5, "sets": 5 },
+          { "name": "Rack Squat", "reps": 5, "sets": 5 },
+          { "name": "Suitcase Deadlift", "reps": 5, "sets": 5 },
+          { "name": "Lateral Lunge", "reps": 10, "sets": 3, "side": "each" },
+          { "name": "Pistol Squat", "reps": 2, "sets": 4, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Potencia de Cadera y Balísticos",
+    "title": "Hip Power & Ballistics",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "power",
-      "posterior_chain",
-      "conditioning"
-    ],
+    "tips": "Land softly on the jump squats to protect your knees.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 20,
-            "sets": 5
-          },
-          {
-            "name": "Clean",
-            "reps": 8,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Jump Squat",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing 1 mano",
-            "reps": 12,
-            "sets": 4,
-            "side": "each"
-          }
+          { "name": "Swing", "reps": 20, "sets": 5 },
+          { "name": "Clean", "reps": 8, "sets": 4, "side": "each" },
+          { "name": "Jump Squat", "reps": 10, "sets": 4 },
+          { "name": "1-Arm Swing", "reps": 12, "sets": 4, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Explosividad Unilateral y Control",
+    "title": "Unilateral Explosiveness & Control",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "power",
-      "full_body",
-      "coordination"
-    ],
+    "tips": "Punch through at the top of the snatch.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 6,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Reverse Lunge",
-            "reps": 8,
-            "sets": 4,
-            "side": "each_leg"
-          },
-          {
-            "name": "Swing",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Plank",
-            "reps": "45s",
-            "sets": 3
-          }
+          { "name": "Snatch", "reps": 6, "sets": 5, "side": "each" },
+          { "name": "Reverse Lunge", "reps": 8, "sets": 4, "side": "each_leg" },
+          { "name": "Swing", "reps": 15, "sets": 4 },
+          { "name": "Plank", "reps": "45s", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Potencia Vertical y Empuje",
+    "title": "Vertical Power & Push",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "power",
-      "upper_body"
-    ],
+    "tips": "Use your legs to drive the weight up in the push press.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Push Press",
-            "reps": 6,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "High Pull",
-            "reps": 8,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 20,
-            "sets": 4
-          },
-          {
-            "name": "Hollow Hold",
-            "reps": "30s",
-            "sets": 3
-          }
+          { "name": "Push Press", "reps": 6, "sets": 5, "side": "each" },
+          { "name": "High Pull", "reps": 8, "sets": 4 },
+          { "name": "Swing", "reps": 20, "sets": 4 },
+          { "name": "Hollow Hold", "reps": "30s", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Potencia Total y Resistencia",
+    "title": "Total Power & Endurance",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "power",
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Keep a steady rhythm during the farmer carry.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Clean & Jerk",
-            "reps": 5,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": 25,
-            "sets": 4
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 12,
-            "sets": 4
-          },
-          {
-            "name": "Farmer Carry",
-            "reps": "40m",
-            "sets": 4
-          }
+          { "name": "Clean & Jerk", "reps": 5, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": 25, "sets": 4 },
+          { "name": "Goblet Squat", "reps": 12, "sets": 4 },
+          { "name": "Farmer Carry", "reps": "40m", "sets": 4 }
         ]
       }
     ]
   },
   {
-    "title": "Balísticos Avanzados y Ritmo",
+    "title": "Advanced Ballistics & Rhythm",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "power",
-      "conditioning"
-    ],
+    "tips": "This is a high volume of snatches. Monitor your hand health (calluses).",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 10,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": 30,
-            "sets": 4
-          },
-          {
-            "name": "Jump Squat",
-            "reps": 12,
-            "sets": 4
-          },
-          {
-            "name": "Plank",
-            "reps": "60s",
-            "sets": 3
-          }
+          { "name": "Snatch", "reps": 10, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": 30, "sets": 4 },
+          { "name": "Jump Squat", "reps": 12, "sets": 4 },
+          { "name": "Plank", "reps": "60s", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Potencia Unilateral de Tren Inferior",
+    "title": "Unilateral Lower Body Power",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "power",
-      "legs"
-    ],
+    "tips": "Be explosive on the clean, but controlled on the lunge.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Clean",
-            "reps": 10,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Reverse Lunge",
-            "reps": 10,
-            "sets": 4,
-            "side": "each_leg"
-          },
-          {
-            "name": "Swing 1 mano",
-            "reps": 15,
-            "sets": 4,
-            "side": "each"
-          },
-          {
-            "name": "Side Plank",
-            "reps": "45s",
-            "sets": 3,
-            "side": "each"
-          }
+          { "name": "Clean", "reps": 10, "sets": 4, "side": "each" },
+          { "name": "Reverse Lunge", "reps": 10, "sets": 4, "side": "each_leg" },
+          { "name": "1-Arm Swing", "reps": 15, "sets": 4, "side": "each" },
+          { "name": "Side Plank", "reps": "45s", "sets": 3, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "Empuje Explosivo y Core",
+    "title": "Explosive Push & Core",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "power",
-      "upper_body",
-      "core"
-    ],
+    "tips": "Keep your lower back pressed to the ground in the hollow hold.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Push Press",
-            "reps": 8,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "High Pull",
-            "reps": 10,
-            "sets": 4
-          },
-          {
-            "name": "Swing",
-            "reps": 25,
-            "sets": 4
-          },
-          {
-            "name": "Hollow Hold",
-            "reps": "45s",
-            "sets": 3
-          }
+          { "name": "Push Press", "reps": 8, "sets": 5, "side": "each" },
+          { "name": "High Pull", "reps": 10, "sets": 4 },
+          { "name": "Swing", "reps": 25, "sets": 4 },
+          { "name": "Hollow Hold", "reps": "45s", "sets": 3 }
         ]
       }
     ]
   },
   {
-    "title": "Potencia Global y Trabajo Mixto",
+    "title": "Global Power & Mixed Work",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "power",
-      "full_body",
-      "conditioning"
-    ],
+    "tips": "Coordinate the dip and drive in the jerk.",
     "format": "Sets/Reps",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Clean & Jerk",
-            "reps": 6,
-            "sets": 5,
-            "side": "each"
-          },
-          {
-            "name": "Swing",
-            "reps": 30,
-            "sets": 4
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 15,
-            "sets": 4
-          },
-          {
-            "name": "Farmer Carry",
-            "reps": "50m",
-            "sets": 4
-          }
+          { "name": "Clean & Jerk", "reps": 6, "sets": 5, "side": "each" },
+          { "name": "Swing", "reps": 30, "sets": 4 },
+          { "name": "Goblet Squat", "reps": 15, "sets": 4 },
+          { "name": "Farmer Carry", "reps": "50m", "sets": 4 }
         ]
       }
     ]
   },
   {
-    "title": "Acondicionamiento Base Full Body",
+    "title": "Full Body Base Conditioning",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Find a sustainable pace. Don't redline in the first 5 minutes.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 20
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 15
-          },
-          {
-            "name": "Push-up",
-            "reps": 10
-          }
+          { "name": "Swing", "reps": 20 },
+          { "name": "Goblet Squat", "reps": 15 },
+          { "name": "Push-up", "reps": 10 }
         ]
       }
     ]
   },
   {
-    "title": "Resistencia de Tren Inferior",
+    "title": "Lower Body Stamina",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "legs"
-    ],
+    "tips": "Sink low into the wall sit and breathe calmly.",
     "format": "Intervals",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Reverse Lunge",
-            "reps": 12
-          },
-          {
-            "name": "Swing",
-            "reps": 20
-          },
-          {
-            "name": "Wall Sit",
-            "reps": "45s"
-          }
+          { "name": "Reverse Lunge", "reps": 12 },
+          { "name": "Swing", "reps": 20 },
+          { "name": "Wall Sit", "reps": "45s" }
         ]
       }
     ]
   },
   {
-    "title": "Condición y Core Dinámico",
+    "title": "Dynamic Core & Condition",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 20,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "core"
-    ],
+    "tips": "Keep the knees close to the ground in mountain climbers.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "KB Russian Twist",
-            "reps": 20
-          },
-          {
-            "name": "Mountain Climber",
-            "reps": 30
-          },
-          {
-            "name": "Plank",
-            "reps": "40s"
-          }
+          { "name": "KB Russian Twist", "reps": 20 },
+          { "name": "Mountain Climber", "reps": 30 },
+          { "name": "Plank", "reps": "40s" }
         ]
       }
     ]
   },
   {
-    "title": "Circuito Metabólico Mixto",
+    "title": "Mixed Metabolic Circuit",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Transition smoothly from one exercise to the next.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 15
-          },
-          {
-            "name": "Clean",
-            "reps": 8,
-            "side": "each"
-          },
-          {
-            "name": "Push Press",
-            "reps": 6,
-            "side": "each"
-          }
+          { "name": "Swing", "reps": 15 },
+          { "name": "Clean", "reps": 8, "side": "each" },
+          { "name": "Push Press", "reps": 6, "side": "each" }
         ]
       }
     ]
   },
   {
-    "title": "EMOM Cardio con Kettlebell",
+    "title": "Kettlebell Cardio EMOM",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Use the rest of the minute to shake out tension.",
     "format": "EMOM",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
-        "rules": {
-          "style": "EMOM",
-          "every": "1 min"
-        },
+        "rules": { "style": "EMOM", "every": "1 min" },
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 20
-          }
+          { "name": "Swing", "reps": 20 }
         ]
       }
     ]
   },
   {
-    "title": "Resistencia Unilateral y Control",
+    "title": "Unilateral Stamina & Control",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "If your form breaks on the snatch, switch to high pulls.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 6,
-            "side": "each"
-          },
-          {
-            "name": "Reverse Lunge",
-            "reps": 10,
-            "side": "each_leg"
-          },
-          {
-            "name": "Plank",
-            "reps": "45s"
-          }
+          { "name": "Snatch", "reps": 6, "side": "each" },
+          { "name": "Reverse Lunge", "reps": 10, "side": "each_leg" },
+          { "name": "Plank", "reps": "45s" }
         ]
       }
     ]
   },
   {
-    "title": "Condición de Empuje y Tracción",
+    "title": "Push & Pull Conditioning",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "upper_body"
-    ],
+    "tips": "Keep the core engaged during the row to protect the lower back.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Push Press",
-            "reps": 8
-          },
-          {
-            "name": "Row",
-            "reps": 10
-          },
-          {
-            "name": "Burpee",
-            "reps": 10
-          }
+          { "name": "Push Press", "reps": 8 },
+          { "name": "Row", "reps": 10 },
+          { "name": "Burpee", "reps": 10 }
         ]
       }
     ]
   },
   {
-    "title": "Metcon Progresivo",
+    "title": "Progressive Metcon",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Break the higher rep sets into chunks if needed (e.g., 15+15).",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": "10-20-30"
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": "10-20-30"
-          }
+          { "name": "Swing", "reps": "10-20-30" },
+          { "name": "Goblet Squat", "reps": "10-20-30" }
         ]
       }
     ]
   },
   {
-    "title": "AMRAP Largo de Resistencia",
+    "title": "Long Endurance AMRAP",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Maintain a conversational pace for the first half.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 25
-          },
-          {
-            "name": "Push-up",
-            "reps": 15
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 20
-          }
+          { "name": "Swing", "reps": 25 },
+          { "name": "Push-up", "reps": 15 },
+          { "name": "Goblet Squat", "reps": 20 }
         ]
       }
     ]
   },
   {
-    "title": "Intervalos de Alta Demanda",
+    "title": "High Demand Intervals",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Recover with nasal breathing during the rest periods.",
     "format": "Intervals",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 8,
-            "side": "each"
-          },
-          {
-            "name": "Jump Squat",
-            "reps": 12
-          },
-          {
-            "name": "Rest",
-            "reps": "30s"
-          }
+          { "name": "Snatch", "reps": 8, "side": "each" },
+          { "name": "Jump Squat", "reps": 12 },
+          { "name": "Rest", "reps": "30s" }
         ]
       }
     ]
   },
   {
-    "title": "Core y Cardio Continuo",
+    "title": "Continuous Core & Cardio",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 25,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "core"
-    ],
+    "tips": "Squeeze your glutes in the plank to prevent hip sagging.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 25,
         "exercises": [
-          {
-            "name": "KB Russian Twist",
-            "reps": 25
-          },
-          {
-            "name": "Mountain Climber",
-            "reps": 40
-          },
-          {
-            "name": "Plank",
-            "reps": "60s"
-          }
+          { "name": "KB Russian Twist", "reps": 25 },
+          { "name": "Mountain Climber", "reps": 40 },
+          { "name": "Plank", "reps": "60s" }
         ]
       }
     ]
   },
   {
-    "title": "Condición Mixta con Cargas",
+    "title": "Mixed Loaded Conditioning",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Shoulders back and down during the carry.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "Farmer Carry",
-            "reps": "40m"
-          },
-          {
-            "name": "Swing",
-            "reps": 30
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 20
-          }
+          { "name": "Farmer Carry", "reps": "40m" },
+          { "name": "Swing", "reps": 30 },
+          { "name": "Goblet Squat", "reps": 20 }
         ]
       }
     ]
   },
   {
-    "title": "EMOM Final de Resistencia",
+    "title": "Endurance Final EMOM",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 5,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "High volume swings. Tape your hands if you are prone to blisters.",
     "format": "EMOM",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
-        "rules": {
-          "style": "EMOM",
-          "every": "1 min"
-        },
+        "rules": { "style": "EMOM", "every": "1 min" },
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 25
-          }
+          { "name": "Swing", "reps": 25 }
         ]
       }
     ]
   },
   {
-    "title": "AMRAP Extendido Full Body",
+    "title": "Extended Full Body AMRAP",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Use leg drive on the push press as you fatigue.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
-        "rules": {
-          "style": "AMRAP"
-        },
+        "rules": { "style": "AMRAP" },
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 8,
-            "side": "each"
-          },
-          {
-            "name": "Push Press",
-            "reps": 10
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 20
-          }
+          { "name": "Snatch", "reps": 8, "side": "each" },
+          { "name": "Push Press", "reps": 10 },
+          { "name": "Goblet Squat", "reps": 20 }
         ]
       }
     ]
   },
   {
-    "title": "Circuito Final de Core y Cardio",
+    "title": "Final Core/Cardio Circuit",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 30,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "core"
-    ],
+    "tips": "90s plank is tough. Drop to knees briefly if form fails.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 30,
         "exercises": [
-          {
-            "name": "KB Russian Twist",
-            "reps": 30
-          },
-          {
-            "name": "Plank",
-            "reps": "90s"
-          },
-          {
-            "name": "Mountain Climber",
-            "reps": 50
-          }
+          { "name": "KB Russian Twist", "reps": 30 },
+          { "name": "Plank", "reps": "90s" },
+          { "name": "Mountain Climber", "reps": 50 }
         ]
       }
     ]
   },
   {
-    "title": "Desafío Final Metabólico",
+    "title": "Metabolic Final Challenge",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Efecto Kettlebell",
     "durationMinutes": 35,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Break sets into manageable chunks (e.g., 20 swings, 10 squats).",
     "format": "For Time",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 35,
         "exercises": [
-          {
-            "name": "Swing",
-            "reps": 200
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 100
-          },
-          {
-            "name": "Push-up",
-            "reps": 100
-          }
+          { "name": "Swing", "reps": 200 },
+          { "name": "Goblet Squat", "reps": 100 },
+          { "name": "Push-up", "reps": 100 }
         ]
       }
     ]
   },
   {
     "title": "One Bell Wonder",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Flow from one move to the next smoothly.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 8
-          },
-          {
-            "name": "Military Press",
-            "reps": 3
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 5
-          }
+          { "name": "Snatch", "reps": 8 },
+          { "name": "Military Press", "reps": 3 },
+          { "name": "Goblet Squat", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Simple Not Easy Snatch Flow",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "power"
-    ],
+    "tips": "Focus on hip snap for the snatch, strict strength for the press.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": 10
-          },
-          {
-            "name": "Military Press",
-            "reps": 1
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 2
-          }
+          { "name": "Snatch", "reps": 10 },
+          { "name": "Military Press", "reps": 1 },
+          { "name": "Goblet Squat", "reps": 2 }
         ]
       }
     ]
   },
   {
     "title": "Strength Aerobics",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 3,
-    "focus": [
-      "strength",
-      "conditioning"
-    ],
+    "tips": "Do one rep of each without putting the bell down, then switch hands.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Single Arm Clean",
-            "reps": 1
-          },
-          {
-            "name": "Military Press",
-            "reps": 1
-          },
-          {
-            "name": "Racked Goblet Squat",
-            "reps": 1
-          }
+          { "name": "Single Arm Clean", "reps": 1 },
+          { "name": "Military Press", "reps": 1 },
+          { "name": "Racked Goblet Squat", "reps": 1 }
         ]
       }
     ]
   },
   {
     "title": "The Chamber",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "legs",
-      "upper_body"
-    ],
+    "tips": "Use the momentum from the lunge to help press the weight.",
     "format": "Intervals",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
-        "rules": {
-          "work": "30s",
-          "rest": "30s"
-        },
+        "rules": { "work": "30s", "rest": "30s" },
         "exercises": [
-          {
-            "name": "Lunge to Overhead Press"
-          }
+          { "name": "Lunge to Overhead Press" }
         ]
       }
     ]
   },
   {
     "title": "Road Work",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "legs"
-    ],
+    "tips": "Add one rep every minute until failure, then restart.",
     "format": "EMOM",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Push-up",
-            "reps": "progressive"
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": "progressive"
-          }
+          { "name": "Push-up", "reps": "progressive" },
+          { "name": "Goblet Squat", "reps": "progressive" }
         ]
       }
     ]
   },
   {
     "title": "The Circuit Board",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Start-Stop Swing means parking the bell on the floor between every rep.",
     "format": "Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Push Press",
-            "reps": 5
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 5
-          },
-          {
-            "name": "Start-Stop Swing",
-            "reps": 5
-          },
-          {
-            "name": "Pull-up / Row",
-            "reps": 5
-          }
+          { "name": "Push Press", "reps": 5 },
+          { "name": "Goblet Squat", "reps": 5 },
+          { "name": "Start-Stop Swing", "reps": 5 },
+          { "name": "Pull-up / Row", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Lower Body Finisher",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "legs"
-    ],
+    "tips": "Perform squats with a 3-second descent.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Tempo Goblet Squat",
-            "reps": 8
-          },
-          {
-            "name": "Start-Stop Swing",
-            "reps": 8
-          }
+          { "name": "Tempo Goblet Squat", "reps": 8 },
+          { "name": "Start-Stop Swing", "reps": 8 }
         ]
       }
     ]
   },
   {
     "title": "Criss Cross",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "coordination"
-    ],
+    "tips": "Keep core tight to avoid excessive twisting.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Single Arm Swing",
-            "reps": 1
-          },
-          {
-            "name": "Single Arm Clean",
-            "reps": 1
-          },
-          {
-            "name": "Military Press",
-            "reps": 1
-          }
+          { "name": "Single Arm Swing", "reps": 1 },
+          { "name": "Single Arm Clean", "reps": 1 },
+          { "name": "Military Press", "reps": 1 }
         ]
       }
     ]
   },
   {
     "title": "The Descent",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Minimize rest as you go down the ladder.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Push-up",
-            "reps": "20-15-10-5"
-          },
-          {
-            "name": "Kettlebell Swing",
-            "reps": "20-15-10-5"
-          }
+          { "name": "Push-up", "reps": "20-15-10-5" },
+          { "name": "Kettlebell Swing", "reps": "20-15-10-5" }
         ]
       }
     ]
   },
   {
     "title": "The Ghost",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Staggered squat puts 80% weight on front leg, 20% on back toes.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 5
-          },
-          {
-            "name": "Staggered Squat",
-            "reps": 5
-          },
-          {
-            "name": "Military Press",
-            "reps": 5
-          }
+          { "name": "One-arm Swing", "reps": 5 },
+          { "name": "Staggered Squat", "reps": 5 },
+          { "name": "Military Press", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "The Revolver",
+    "category": "power",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "A Squat Thrust is a Burpee without the push-up.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 1
-          },
-          {
-            "name": "Clean",
-            "reps": 1
-          },
-          {
-            "name": "Squat Thrust",
-            "reps": 1
-          }
+          { "name": "One-arm Swing", "reps": 1 },
+          { "name": "Clean", "reps": 1 },
+          { "name": "Squat Thrust", "reps": 1 }
         ]
       }
     ]
   },
   {
     "title": "Single Arm Blitz",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "power"
-    ],
+    "tips": "Complete all reps on one side before switching.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 5
-          },
-          {
-            "name": "Clean & Press",
-            "reps": 5
-          },
-          {
-            "name": "Snatch",
-            "reps": 5
-          },
-          {
-            "name": "Racked Front Squat",
-            "reps": 5
-          }
+          { "name": "One-arm Swing", "reps": 5 },
+          { "name": "Clean & Press", "reps": 5 },
+          { "name": "Snatch", "reps": 5 },
+          { "name": "Racked Front Squat", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Quintuplets",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Complex flow. Lower the bell gently to rack position between snatch and squat.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 1
-          },
-          {
-            "name": "Clean",
-            "reps": 1
-          },
-          {
-            "name": "Military Press",
-            "reps": 1
-          },
-          {
-            "name": "Snatch",
-            "reps": 1
-          },
-          {
-            "name": "Racked Front Squat",
-            "reps": 1
-          }
+          { "name": "One-arm Swing", "reps": 1 },
+          { "name": "Clean", "reps": 1 },
+          { "name": "Military Press", "reps": 1 },
+          { "name": "Snatch", "reps": 1 },
+          { "name": "Racked Front Squat", "reps": 1 }
         ]
       }
     ]
   },
   {
     "title": "Booster Shot #2",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Keep quality high even as heart rate rises.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 10
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 5
-          },
-          {
-            "name": "Push-up",
-            "reps": 5
-          }
+          { "name": "Kettlebell Swing", "reps": 10 },
+          { "name": "Goblet Squat", "reps": 5 },
+          { "name": "Push-up", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Swings + Push Ups",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Simple and sinister. Focus on core tension.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 10
-          },
-          {
-            "name": "Push-up",
-            "reps": 10
-          }
+          { "name": "Kettlebell Swing", "reps": 10 },
+          { "name": "Push-up", "reps": 10 }
         ]
       }
     ]
   },
   {
     "title": "The Basics",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "conditioning",
-      "technique"
-    ],
+    "tips": "Good for refining transitions between ballistic and grind lifts.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 5
-          },
-          {
-            "name": "Snatch",
-            "reps": 2
-          },
-          {
-            "name": "Clean & Press",
-            "reps": 2
-          }
+          { "name": "One-arm Swing", "reps": 5 },
+          { "name": "Snatch", "reps": 2 },
+          { "name": "Clean & Press", "reps": 2 }
         ]
       }
     ]
   },
   {
     "title": "Swing and Squat Ladder",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "legs"
-    ],
+    "tips": "Swings stay constant, squats decrease. Intensity increases on squats.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 10
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": "10→1"
-          }
+          { "name": "Kettlebell Swing", "reps": 10 },
+          { "name": "Goblet Squat", "reps": "10→1" }
         ]
       }
     ]
   },
   {
     "title": "Snatch Technique KWOW",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 3,
-    "focus": [
-      "technique",
-      "power"
-    ],
+    "tips": "Ascending ladder. Stop if form degrades.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "Snatch",
-            "reps": "ascending"
-          }
+          { "name": "Snatch", "reps": "ascending" }
         ]
       }
     ]
   },
   {
     "title": "High Voltage / Sprints",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "power"
-    ],
+    "tips": "Sub sprints for 30s Jumping Jacks if space is limited.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 5
-          },
-          {
-            "name": "Clean",
-            "reps": 5
-          },
-          {
-            "name": "High Pull",
-            "reps": 5
-          },
-          {
-            "name": "Military Press",
-            "reps": 5
-          },
-          {
-            "name": "Snatch",
-            "reps": 5
-          },
-          {
-            "name": "Sprint",
-            "reps": "50m"
-          }
+          { "name": "One-arm Swing", "reps": 5 },
+          { "name": "Clean", "reps": 5 },
+          { "name": "High Pull", "reps": 5 },
+          { "name": "Military Press", "reps": 5 },
+          { "name": "Snatch", "reps": 5 },
+          { "name": "Sprint", "reps": "50m" }
         ]
       }
     ]
   },
   {
     "title": "9 Minute Workout from Hell",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 9,
     "difficulty": 5,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "A mental sprint. Go hard.",
     "format": "Timed Circuit",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 9,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "duration": "30s"
-          },
-          {
-            "name": "One-arm Clean",
-            "duration": "30s"
-          },
-          {
-            "name": "One-arm Snatch",
-            "duration": "30s"
-          },
-          {
-            "name": "One-arm Push Press",
-            "duration": "30s"
-          },
-          {
-            "name": "Reverse Lunge",
-            "duration": "30s"
-          },
-          {
-            "name": "Single-leg Deadlift",
-            "duration": "30s"
-          },
-          {
-            "name": "Swing Burpee",
-            "duration": "60s"
-          },
-          {
-            "name": "Plank",
-            "duration": "60s"
-          },
-          {
-            "name": "Thruster",
-            "duration": "30s"
-          }
+          { "name": "One-arm Swing", "duration": "30s" },
+          { "name": "One-arm Clean", "duration": "30s" },
+          { "name": "One-arm Snatch", "duration": "30s" },
+          { "name": "One-arm Push Press", "duration": "30s" },
+          { "name": "Reverse Lunge", "duration": "30s" },
+          { "name": "Single-leg Deadlift", "duration": "30s" },
+          { "name": "Swing Burpee", "duration": "60s" },
+          { "name": "Plank", "duration": "60s" },
+          { "name": "Thruster", "duration": "30s" }
         ]
       }
     ]
   },
   {
     "title": "Descent into Pain",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 5,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Crush exercises require squeezing the bell hard between hands.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": "10→1"
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": "10→1"
-          },
-          {
-            "name": "Crush Curl",
-            "reps": "10→1"
-          },
-          {
-            "name": "Crush Push-up",
-            "reps": "10→1"
-          }
+          { "name": "Kettlebell Swing", "reps": "10→1" },
+          { "name": "Goblet Squat", "reps": "10→1" },
+          { "name": "Crush Curl", "reps": "10→1" },
+          { "name": "Crush Push-up", "reps": "10→1" }
         ]
       }
     ]
   },
   {
     "title": "Kettlebell Inferno",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Ladder scheme is 2-4-6-8-10-8-6-4-2. Pace yourself.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": "2-10-2"
-          },
-          {
-            "name": "One-arm Swing",
-            "reps": "R+L"
-          },
-          {
-            "name": "Snatch",
-            "reps": "R+L"
-          },
-          {
-            "name": "Thruster",
-            "reps": "R+L"
-          },
-          {
-            "name": "Row",
-            "reps": "R+L"
-          },
-          {
-            "name": "Push-up",
-            "reps": "variable"
-          }
+          { "name": "Kettlebell Swing", "reps": "2-10-2" },
+          { "name": "One-arm Swing", "reps": "R+L" },
+          { "name": "Snatch", "reps": "R+L" },
+          { "name": "Thruster", "reps": "R+L" },
+          { "name": "Row", "reps": "R+L" },
+          { "name": "Push-up", "reps": "variable" }
         ]
       }
     ]
   },
   {
     "title": "The Quick Hard Hitter",
+    "category": "strength",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Use a heavy bell. Low reps, high power.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 5
-          },
-          {
-            "name": "Clean & Press",
-            "reps": 5
-          },
-          {
-            "name": "Snatch",
-            "reps": 5
-          },
-          {
-            "name": "Racked Goblet Squat",
-            "reps": 5
-          }
+          { "name": "Kettlebell Swing", "reps": 5 },
+          { "name": "Clean & Press", "reps": 5 },
+          { "name": "Snatch", "reps": 5 },
+          { "name": "Racked Goblet Squat", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "Super Snatchtastic",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "power"
-    ],
+    "tips": "Focus on hip drive. Don't pull with the arm.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 10
-          },
-          {
-            "name": "Snatch",
-            "reps": 5,
-            "side": "each"
-          }
+          { "name": "Kettlebell Swing", "reps": 10 },
+          { "name": "Snatch", "reps": 5, "side": "each" }
         ]
       }
     ]
   },
   {
     "title": "Fresh Off the Yacht",
+    "category": "mobility",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 15,
     "difficulty": 4,
-    "focus": [
-      "conditioning",
-      "full_body"
-    ],
+    "tips": "Complex flow. Prioritize movement quality over speed.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 15,
         "exercises": [
-          {
-            "name": "One-arm Swing",
-            "reps": 5
-          },
-          {
-            "name": "Clean",
-            "reps": 5
-          },
-          {
-            "name": "Snatch",
-            "reps": 5
-          },
-          {
-            "name": "Jerk",
-            "reps": 5
-          },
-          {
-            "name": "Reverse Lunge",
-            "reps": 5
-          }
+          { "name": "One-arm Swing", "reps": 5 },
+          { "name": "Clean", "reps": 5 },
+          { "name": "Snatch", "reps": 5 },
+          { "name": "Jerk", "reps": 5 },
+          { "name": "Reverse Lunge", "reps": 5 }
         ]
       }
     ]
   },
   {
     "title": "The Hellion",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 5,
-    "focus": [
-      "conditioning",
-      "power"
-    ],
+    "tips": "2-hand swings ladder up and down. 1-hand moves stay constant.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Two-hand Swing",
-            "reps": "2→10→2"
-          },
-          {
-            "name": "One-hand Swing",
-            "reps": "R+L"
-          },
-          {
-            "name": "Thruster",
-            "reps": "R+L"
-          }
+          { "name": "Two-hand Swing", "reps": "2→10→2" },
+          { "name": "One-hand Swing", "reps": "R+L" },
+          { "name": "Thruster", "reps": "R+L" }
         ]
       }
     ]
   },
   {
     "title": "Reverse Fibonacci",
+    "category": "muscle",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "High to low reps. Go heavier on low rep sets if possible.",
     "format": "Rounds",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": 8
-          },
-          {
-            "name": "Goblet Squat",
-            "reps": 5
-          },
-          {
-            "name": "Swing",
-            "reps": 5
-          },
-          {
-            "name": "Front Squat",
-            "reps": 3
-          },
-          {
-            "name": "Swing",
-            "reps": 3
-          },
-          {
-            "name": "Squat",
-            "reps": 2
-          },
-          {
-            "name": "Swing",
-            "reps": 2
-          },
-          {
-            "name": "Squat",
-            "reps": 1
-          }
+          { "name": "Kettlebell Swing", "reps": 8 },
+          { "name": "Goblet Squat", "reps": 5 },
+          { "name": "Swing", "reps": 5 },
+          { "name": "Front Squat", "reps": 3 },
+          { "name": "Swing", "reps": 3 },
+          { "name": "Squat", "reps": 2 },
+          { "name": "Swing", "reps": 2 },
+          { "name": "Squat", "reps": 1 }
         ]
       }
     ]
   },
   {
     "title": "Quick and Sweaty",
+    "category": "conditioning",
+    "kettlebells": "single",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 4,
-    "focus": [
-      "conditioning"
-    ],
+    "tips": "Rows counterbalance the pushing. Keep back flat.",
     "format": "Ladder",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Kettlebell Swing",
-            "reps": "10-15-20"
-          },
-          {
-            "name": "Bent Over Row",
-            "reps": 5,
-            "side": "each"
-          }
+          { "name": "Kettlebell Swing", "reps": "10-15-20" },
+          { "name": "Bent Over Row", "reps": 5, "side": "each" }
         ]
       }
     ]
   },
   {
     "title": "Reverse Fibonacci 2.0",
+    "category": "strength",
+    "kettlebells": "double",
     "source": "Racked & Loaded – Pat Flynn",
     "durationMinutes": 20,
     "difficulty": 5,
-    "focus": [
-      "strength",
-      "conditioning"
-    ],
+    "tips": "Requires Double KB. Push-ups on handles demand core stability.",
     "format": "AMRAP",
     "blocks": [
       {
         "type": "main",
         "duration_minutes": 20,
         "exercises": [
-          {
-            "name": "Double Clean",
-            "reps": 8
-          },
-          {
-            "name": "Push-up on Kettlebells",
-            "reps": 5
-          },
-          {
-            "name": "Double Clean",
-            "reps": 5
-          },
-          {
-            "name": "Push-up",
-            "reps": 3
-          },
-          {
-            "name": "Double Clean",
-            "reps": 3
-          },
-          {
-            "name": "Push-up",
-            "reps": 2
-          },
-          {
-            "name": "Double Clean",
-            "reps": 2
-          },
-          {
-            "name": "Push-up",
-            "reps": 1
-          }
+          { "name": "Double Clean", "reps": 8 },
+          { "name": "Push-up on Kettlebells", "reps": 5 },
+          { "name": "Double Clean", "reps": 5 },
+          { "name": "Push-up", "reps": 3 },
+          { "name": "Double Clean", "reps": 3 },
+          { "name": "Push-up", "reps": 2 },
+          { "name": "Double Clean", "reps": 2 },
+          { "name": "Push-up", "reps": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Double KB Shoulder Hypertrophy",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 4,
+    "tips": "Control the descent (eccentric) for 3 seconds for growth.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "Double Overhead Press", "reps": "8-10", "sets": 4 },
+          { "name": "See-Saw Press", "reps": 12, "sets": 3 },
+          { "name": "KB Front Raise", "reps": 12, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Hip Opener Flow",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 1,
+    "tips": "Use very light weight. Focus on range of motion.",
+    "format": "Flow",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Cossack Squat", "reps": 5, "side": "each" },
+          { "name": "Kneeling Halo", "reps": 8, "side": "each" },
+          { "name": "Single Leg RDL (Light)", "reps": 5, "side": "each" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Power Tabata",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 4,
+    "difficulty": 5,
+    "tips": "20s work, 10s rest. 8 rounds. Go max effort.",
+    "format": "Tabata",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 4,
+        "rules": { "style": "Tabata", "rounds": 8 },
+        "exercises": [
+          { "name": "American Swing", "reps": "max" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Isometric Strength",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Hold positions tight. Breathe behind the shield.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Waiters Walk", "reps": "30m", "sets": 3, "side": "each" },
+          { "name": "Pause Goblet Squat (3s)", "reps": 5, "sets": 4 },
+          { "name": "KB Plank Drag", "reps": "45s", "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Double KB Armor",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 30,
+    "difficulty": 4,
+    "tips": "Dan John's Armor Building. 2 Cleans, 1 Press, 3 Squats.",
+    "format": "EMOM",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 30,
+        "rules": { "style": "EMOM", "task": "2-1-3 Complex" },
+        "exercises": [
+          { "name": "Double Clean", "reps": 2 },
+          { "name": "Double Press", "reps": 1 },
+          { "name": "Double Front Squat", "reps": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Joint Wake-Up",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 10,
+    "difficulty": 1,
+    "tips": "Great for morning routine or warmup.",
+    "format": "Circuit",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 10,
+        "exercises": [
+          { "name": "Figure 8s", "reps": 10 },
+          { "name": "Halo", "reps": 10 },
+          { "name": "Good Morning", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "500 Reps Challenge",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 40,
+    "difficulty": 5,
+    "tips": "Pace yourself. Break sets early before failure.",
+    "format": "For Time",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 40,
+        "exercises": [
+          { "name": "Swing", "reps": 100 },
+          { "name": "Goblet Squat", "reps": 100 },
+          { "name": "Push-up", "reps": 100 },
+          { "name": "Clean", "reps": 100 },
+          { "name": "Press", "reps": 100 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Steel Back",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 3,
+    "tips": "Gorilla rows: reset bell to floor each rep.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "Gorilla Row", "reps": 12, "sets": 4 },
+          { "name": "KB Pull-Over", "reps": 12, "sets": 3 },
+          { "name": "Upright Row", "reps": 10, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Viking Protocol",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 30,
+    "difficulty": 4,
+    "tips": "Viking Push Press involves continuous leg drive.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 30,
+        "exercises": [
+          { "name": "Viking Push Press", "reps": 15, "sets": 4 },
+          { "name": "Snatch", "reps": 15, "sets": 4 },
+          { "name": "Overhead Lunge", "reps": 8, "sets": 3, "side": "each" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Loaded Stretching",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 2,
+    "tips": "Use the weight to pull you deeper into range.",
+    "format": "Flow",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "RDL Stretch", "reps": 8, "sets": 3 },
+          { "name": "Pry Squat", "reps": 5, "sets": 3 },
+          { "name": "Windmill", "reps": 5, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Bodybuilder Legs",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 30,
+    "difficulty": 4,
+    "tips": "Elevate heels on plates for more quad focus.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 30,
+        "exercises": [
+          { "name": "Heels Elevated Goblet Squat", "reps": 15, "sets": 4 },
+          { "name": "Split Squat", "reps": 12, "sets": 3, "side": "each" },
+          { "name": "Stiff Leg Deadlift", "reps": 12, "sets": 4 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The 1000 Kilos",
+    "category": "strength",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Calculate Volume (Weight x Reps). Reach 1000kg total.",
+    "format": "Volume",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "rules": { "task": "Accumulate 1000kg volume" },
+        "exercises": [
+          { "name": "Double Clean & Press", "reps": "variable" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Core 360",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 3,
+    "tips": "Work all planes: anti-extension, anti-rotation.",
+    "format": "Circuit",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Around the World", "reps": 10, "side": "each" },
+          { "name": "Suitcase Carry", "reps": "30s", "side": "each" },
+          { "name": "Hollow Body Hold", "reps": "30s" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Tactical Cardio",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 4,
+    "tips": "Simulate combat movements. Get up fast.",
+    "format": "AMRAP",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "rules": { "style": "AMRAP" },
+        "exercises": [
+          { "name": "Turkish Get Up", "reps": 1, "side": "each" },
+          { "name": "Tactical Swing", "reps": 10 },
+          { "name": "Burpee over Bell", "reps": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Triceps & Shoulders",
+    "category": "muscle",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Keep elbows tucked on extensions.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Close Grip Floor Press", "reps": 12, "sets": 4 },
+          { "name": "Overhead Tricep Extension", "reps": 12, "sets": 4 },
+          { "name": "Halo", "reps": 10, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Pendulum",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 12,
+    "difficulty": 2,
+    "tips": "Use momentum to swing side to side.",
+    "format": "Flow",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 12,
+        "exercises": [
+          { "name": "Frontal Swing (Pendulum)", "reps": 20 },
+          { "name": "Cossack Squat", "reps": 10 },
+          { "name": "Hamstring Stretch", "reps": "30s" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Bear Complex (Lite)",
+    "category": "strength",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 4,
+    "tips": "1 rep = Clean + Squat + Press + Squat + Press.",
+    "format": "Complex",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "rules": { "style": "5 rounds, rest as needed" },
+        "exercises": [
+          { "name": "Double Clean", "reps": 1 },
+          { "name": "Double Front Squat", "reps": 1 },
+          { "name": "Double Press", "reps": 1 },
+          { "name": "Double Front Squat", "reps": 1 },
+          { "name": "Double Press", "reps": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Death by 10 Meters",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 4,
+    "tips": "Run 10m, do work, run back.",
+    "format": "EMOM",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "rules": { "style": "EMOM" },
+        "exercises": [
+          { "name": "Sprint 10m", "reps": 1 },
+          { "name": "Swing", "reps": 10 },
+          { "name": "Goblet Squat", "reps": 5 },
+          { "name": "Sprint 10m back", "reps": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Antagonist Chest & Back",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 3,
+    "tips": "Perform A1 then immediately A2.",
+    "format": "Superset",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "A1. Double Floor Press", "reps": 10, "sets": 4 },
+          { "name": "A2. Double Bent Row", "reps": 10, "sets": 4 },
+          { "name": "B1. Push-up on Bells", "reps": "Failure", "sets": 3 },
+          { "name": "B2. Pull-Over", "reps": 12, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Shoulder TGU Mobility",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 2,
+    "tips": "Pause at each stage of the TGU for 3 seconds.",
+    "format": "Practice",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Pausing TGU", "reps": 3, "side": "each" },
+          { "name": "Arm Bar", "reps": "30s", "side": "each" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Grip Strength Circuit",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 2,
+    "tips": "If grip fails, set bell down safely.",
+    "format": "Circuit",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Heavy Farmer Walk", "reps": "30s" },
+          { "name": "Bottom-Up Hold", "reps": "20s", "side": "each" },
+          { "name": "1-Arm Swing", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Glutes of Steel",
+    "category": "muscle",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Squeeze glutes hard at the top.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Weighted Glute Bridge", "reps": 15, "sets": 4 },
+          { "name": "RDL", "reps": 12, "sets": 4 },
+          { "name": "Frog Pump", "reps": 20, "sets": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Classic 5x5",
+    "category": "strength",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 30,
+    "difficulty": 3,
+    "tips": "Rest 2-3 mins between sets. Go heavy.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 30,
+        "exercises": [
+          { "name": "Double Military Press", "reps": 5, "sets": 5 },
+          { "name": "Double Front Squat", "reps": 5, "sets": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Pure Power Intervals",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 4,
+    "tips": "Work: 15s, Rest: 45s. Max effort on work.",
+    "format": "Intervals",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Max Power Swing", "reps": "15s" },
+          { "name": "Active Rest", "reps": "45s" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Beast Complex (Lite)",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 4,
+    "tips": "Clean, Press, Squat. Repeat x6 without putting down.",
+    "format": "Complex",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Clean", "reps": 1 },
+          { "name": "Press", "reps": 1 },
+          { "name": "Front Squat", "reps": 1 },
+          { "name": "Repeat cycle x6", "reps": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Deep Hip Mobility",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 1,
+    "tips": "Pry your knees open with elbows at bottom of squat.",
+    "format": "Static",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Pry Squat Hold", "reps": "30s", "sets": 3 },
+          { "name": "Hip Flexor Stretch", "reps": "45s", "side": "each" },
+          { "name": "90/90 Switch", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Biceps & Shoulders Bomb",
+    "category": "muscle",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 2,
+    "tips": "Low rest to maximize pump.",
+    "format": "Giant Set",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Towel Curl", "reps": 12 },
+          { "name": "Arnold Press", "reps": 10 },
+          { "name": "Lateral Raise", "reps": 12 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Single Leg Stability",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 4,
+    "tips": "Stare at a fixed point for balance.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "Contralateral Single Leg RDL", "reps": 8, "sets": 4, "side": "each" },
+          { "name": "Step-Up", "reps": 10, "sets": 3, "side": "each" },
+          { "name": "Lateral Lunge", "reps": 8, "sets": 3, "side": "each" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Countdown 10-1",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 3,
+    "tips": "10 Swings, 10 Pushups... down to 1.",
+    "format": "Ladder",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Swing", "reps": "10 to 1" },
+          { "name": "Burpee", "reps": "10 to 1" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Functional Isometrics",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Hold position steady. Shaking is good.",
+    "format": "Timed",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Wall Sit", "reps": "45s", "sets": 3 },
+          { "name": "Straight Arm Plank", "reps": "45s", "sets": 3 },
+          { "name": "Overhead Hold", "reps": "30s", "sets": 3, "side": "each" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Spine Flow",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 10,
+    "difficulty": 1,
+    "tips": "Gentle movement to decompress spine.",
+    "format": "Flow",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 10,
+        "exercises": [
+          { "name": "Jefferson Curl (Light)", "reps": 5 },
+          { "name": "Quadruped Thoracic Rotation", "reps": 8, "side": "each" },
+          { "name": "Cat-Cow", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Pectoral Hypertrophy",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Squeeze Press: push bells together while pressing.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Floor Press", "reps": 10, "sets": 4 },
+          { "name": "Squeeze Press", "reps": 12, "sets": 3 },
+          { "name": "Diamond Push-up", "reps": "Failure", "sets": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Viking Snatch",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 15,
+    "difficulty": 4,
+    "tips": "15s work, 15s rest. High speed.",
+    "format": "Intervals",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 15,
+        "rules": { "style": "15on/15off" },
+        "exercises": [
+          { "name": "Snatch", "reps": "max in 15s" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Heavy Rows",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Use your heaviest bell. Don't jerk the weight.",
+    "format": "Sets/Reps",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Supported Row", "reps": 6, "sets": 5, "side": "each" },
+          { "name": "Pendlay Row", "reps": 8, "sets": 4 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Total Coordination",
+    "category": "mobility",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 3,
+    "tips": "Tactical lunge involves passing bell under leg.",
+    "format": "Flow",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Figure 8", "reps": 10 },
+          { "name": "Tactical Lunge", "reps": 10 },
+          { "name": "Slingshot", "reps": 20 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Hunter Complex",
+    "category": "muscle",
+    "kettlebells": "double",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 4,
+    "tips": "Swing, Clean, Squat, Press. 1 rep of each is a cycle.",
+    "format": "Complex",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "Double Swing", "reps": 1 },
+          { "name": "Double Clean", "reps": 1 },
+          { "name": "Double Squat", "reps": 1 },
+          { "name": "Double Press", "reps": 1 },
+          { "name": "Rest", "reps": "90s after 5 cycles" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Perfect Press Ladder",
+    "category": "strength",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 25,
+    "difficulty": 3,
+    "tips": "1-2-3 reps. Rest as much as work takes.",
+    "format": "Ladder",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 25,
+        "exercises": [
+          { "name": "Military Press", "reps": "1-2-3", "sets": 5 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Leg Cardio",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "Gemini",
+    "durationMinutes": 20,
+    "difficulty": 4,
+    "tips": "High reps burn. Keep form perfect.",
+    "format": "AMRAP",
+    "blocks": [
+      {
+        "type": "main",
+        "duration_minutes": 20,
+        "exercises": [
+          { "name": "Walking Lunge", "reps": 20 },
+          { "name": "Air Squat", "reps": 20 },
+          { "name": "Jump Squat", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Two-Round AMSAP",
+    "category": "conditioning",
+    "kettlebells": "single",
+    "source": "User",
+    "durationMinutes": 30,
+    "difficulty": 5,
+    "tips": "AMSAP means As Many Sets As Possible. Switch sides after completing the reps for one side in Round 1. In Round 2, switch sides after completing the reps.",
+    "format": "AMSAP",
+    "blocks": [
+      {
+        "type": "main",
+        "name": "Round 1",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Deadlift", "reps": 3 },
+          { "name": "Row", "reps": 3 },
+          { "name": "Clean", "reps": 3 },
+          { "name": "Switch Side", "reps": 0 }
+        ]
+      },
+      {
+        "type": "main",
+        "name": "Round 2",
+        "duration_minutes": 15,
+        "exercises": [
+          { "name": "Push-up", "reps": 3 },
+          { "name": "Jerk", "reps": 3 },
+          { "name": "Thruster (Thrust-Jerk)", "reps": 3 },
+          { "name": "Switch Side", "reps": 0 }
         ]
       }
     ]

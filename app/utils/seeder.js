@@ -3,48 +3,32 @@ import { staticWorkouts } from './staticSeed';
 
 /**
  * Local Seeder
- * Syncs the global library from the server to Dexie.
- * Fallbacks to static bundle if the server is unreachable or empty.
+ * Populates Dexie with static workouts.
+ * Server API sync removed.
  */
-export const syncLibrary = async () => {
+export var syncLibrary = async function () {
   try {
-    const count = await db.workouts.count();
+    var count = await db.workouts.count();
     
-    let sourceData = [];
-    
-    try {
-      // Try to fetch from server
-      const remoteWorkouts = await $fetch('/api/workouts/library');
-      if (remoteWorkouts && remoteWorkouts.length > 0) {
-        sourceData = remoteWorkouts.map(w => ({
-          id: w.id,
-          title: w.title,
-          difficulty: w.difficulty,
-          durationMinutes: w.durationMinutes,
-          focusTags: w.focusTags.join(','),
-          format: w.format,
-          blocks: w.blocks
-        }));
-        console.log('Syncing library from server...');
+    if (count === 0) {
+      var sourceData = [];
+      for (var i = 0; i < staticWorkouts.length; i++) {
+        var w = staticWorkouts[i];
+        var workout = {};
+        for (var key in w) {
+            workout[key] = w[key];
+        }
+        workout.id = w.id || (i + 1);
+        sourceData.push(workout);
       }
-    } catch (apiError) {
-      console.warn('Server API unreachable. Falling back to static seed.', apiError);
-    }
-
-    // If API returned nothing and local is empty, or API just failed, use static
-    if (sourceData.length === 0 && count === 0) {
-      sourceData = staticWorkouts.map((w, index) => ({
-        ...w,
-        id: w.id || (index + 1)
-      }));
-      console.log('Populating library from static bundle...');
-    }
-
-    if (sourceData.length > 0) {
-      // Clear and bulk add for a clean sync
-      await db.workouts.clear();
-      await db.workouts.bulkAdd(sourceData);
-      console.log('Local library updated:', sourceData.length, 'workouts');
+      
+      if (sourceData.length > 0) {
+        await db.workouts.clear();
+        await db.workouts.bulkAdd(sourceData);
+        console.log('Local library initialized from static bundle:', sourceData.length, 'workouts');
+      }
+    } else {
+      console.log('Local library already exists. Skipping seed.');
     }
   } catch (error) {
     console.error('Failed to initialize local library:', error);

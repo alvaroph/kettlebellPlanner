@@ -1,6 +1,9 @@
 // nuxt.config.js
 export default defineNuxtConfig({
   ssr: false,
+  nitro: {
+    preset: 'static'
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: [
@@ -42,9 +45,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      // 'remote' = Uses Prisma/Server API
-      // 'local' = Uses Dexie/IndexedDB (for PWA/Android)
-      databaseMode: 'local' 
     }
   },
   future: {

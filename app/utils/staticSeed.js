@@ -9,6 +9,6 @@ export const staticWorkouts = workoutsData.map(w => {
   return {
     ...w,
     // Ensure focusTags is a string as expected by useData/seeder
-    focusTags: Array.isArray(w.focus) ? w.focus.join(',') : (w.focusTags || "")
+    focusTags: Array.isArray(w.focus) ? w.focus.join(',') : (w.category || w.focusTags || "")
   };
 });

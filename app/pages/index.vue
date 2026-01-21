@@ -1,18 +1,20 @@
 <script setup>
 // pages/index.vue
 import { syncLibrary } from '~/utils/seeder';
-const { getCurrentProgram, deleteCurrentProgram } = useData();
+var data = useData();
+var getCurrentProgram = data.getCurrentProgram;
+var deleteCurrentProgram = data.deleteCurrentProgram;
 
-const program = ref(null);
-const pending = ref(true);
+var program = ref(null);
+var pending = ref(true);
 
-const loadData = async () => {
+var loadData = async function () {
   pending.value = true;
   program.value = await getCurrentProgram();
   pending.value = false;
 };
 
-onMounted(() => {
+onMounted(function () {
   syncLibrary();
   loadData();
 });

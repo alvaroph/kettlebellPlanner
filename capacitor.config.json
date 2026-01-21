@@ -1,0 +1,5 @@
+{
+  "appId": "com.kat.app",
+  "appName": "KettlebellAppTrainer",
+  "webDir": ".output/public"
+}

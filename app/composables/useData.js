@@ -5,54 +5,84 @@ import { generateStructure, recommendWorkouts } from '../utils/planner';
  * Repository Composable (Serverless)
  * Centralizes all data access using Dexie (IndexedDB). No API calls.
  */
-export const useData = () => {
+export var useData = function () {
   // --- WORKOUTS ---
-  const getWorkouts = async () => {
-    const workouts = await db.workouts.toArray();
+  var getWorkouts = async function () {
+    var workouts = await db.workouts.toArray();
     
     // Cross-reference with completed sessions and feedback
-    const completedSessions = await db.sessions.where('status').equals('completed').toArray();
-    const feedbacks = await db.feedback.toArray();
+    var completedSessions = await db.sessions.where('status').equals('completed').toArray();
+    var feedbacks = await db.feedback.toArray();
     
-    return workouts.map(w => {
-      const matchingSessions = completedSessions.filter(s => s.selectedWorkoutId === w.id);
-      const matchingFeedbacks = feedbacks.filter(f => f.workoutId === w.id);
-      
-      return {
-        ...w,
-        isCompleted: matchingSessions.length > 0,
-        timesCompleted: matchingSessions.length,
-        feedbacks: matchingFeedbacks.map(f => ({
-          date: f.createdAt,
-          rating: f.rating,
-          notes: f.notes,
-          effort: f.repeat ? 'Repeat Preferred' : 'Standard'
-        }))
-      };
-    });
+    var result = [];
+    for (var i = 0; i < workouts.length; i++) {
+        var w = workouts[i];
+        var matchingSessions = [];
+        for (var j = 0; j < completedSessions.length; j++) {
+            if (completedSessions[j].selectedWorkoutId === w.id) {
+                matchingSessions.push(completedSessions[j]);
+            }
+        }
+        
+        var matchingFeedbacks = [];
+        for (var k = 0; k < feedbacks.length; k++) {
+            if (feedbacks[k].workoutId === w.id) {
+                matchingFeedbacks.push(feedbacks[k]);
+            }
+        }
+        
+        var feedbacksMapped = [];
+        for (var l = 0; l < matchingFeedbacks.length; l++) {
+            var f = matchingFeedbacks[l];
+            feedbacksMapped.push({
+                date: f.createdAt,
+                rating: f.rating,
+                notes: f.notes,
+                effort: f.repeat ? 'Repeat Preferred' : 'Standard'
+            });
+        }
+        
+        var workoutWithDetails = {};
+        for (var key in w) {
+            workoutWithDetails[key] = w[key];
+        }
+        workoutWithDetails.isCompleted = matchingSessions.length > 0;
+        workoutWithDetails.timesCompleted = matchingSessions.length;
+        workoutWithDetails.feedbacks = feedbacksMapped;
+        
+        result.push(workoutWithDetails);
+    }
+    return result;
   };
 
   // --- PROGRAMS ---
-  const getCurrentProgram = async () => {
-    const program = await db.programs.where('active').equals(1).first();
+  var getCurrentProgram = async function () {
+    var program = await db.programs.where('active').equals(1).first();
     if (!program) return null;
     
-    const sessions = await db.sessions
+    var sessions = await db.sessions
       .where('programId').equals(program.id)
       .toArray();
+    
+    sessions.sort(function (a, b) {
+        return (a.weekIndex - b.weekIndex) || (a.dayIndex - b.dayIndex);
+    });
       
-    return { 
-      ...program, 
-      sessions: sessions.sort((a,b) => (a.weekIndex - b.weekIndex) || (a.dayIndex - b.dayIndex)) 
-    };
+    var programWithSessions = {};
+    for (var key in program) {
+        programWithSessions[key] = program[key];
+    }
+    programWithSessions.sessions = sessions;
+
+    return programWithSessions;
   };
 
-  const createProgram = async (data) => {
+  var createProgram = async function (data) {
     // 1. Deactivate old programs
     await db.programs.where('active').equals(1).modify({ active: 0 });
     
     // 2. Add new program
-    const id = await db.programs.add({
+    var id = await db.programs.add({
       name: data.name,
       weeks: data.weeks,
       daysPerWeek: data.daysPerWeek,
@@ -63,38 +93,57 @@ export const useData = () => {
     });
 
     // 3. Generate sessions using local utility
-    const planStructure = generateStructure(data.weeks, data.daysPerWeek, data.goal);
-    const sessions = planStructure.map(s => ({
-      ...s,
-      programId: id,
-      status: 'pending'
-    }));
+    var planStructure = generateStructure(data.weeks, data.daysPerWeek, data.goal);
+    var sessions = [];
+    for (var i = 0; i < planStructure.length; i++) {
+        var s = planStructure[i];
+        var session = {};
+        for (var key in s) {
+            session[key] = s[key];
+        }
+        session.programId = id;
+        session.status = 'pending';
+        sessions.push(session);
+    }
 
     await db.sessions.bulkAdd(sessions);
     return { success: true, programId: id };
   };
 
-  const deleteCurrentProgram = async () => {
-    const program = await db.programs.where('active').equals(1).first();
+  var getPrograms = async function () {
+    return await db.programs.reverse().toArray();
+  };
+
+  var switchProgram = async function (programId) {
+    await db.programs.toCollection().modify({ active: 0 });
+    await db.programs.update(programId, { active: 1 });
+  };
+
+  var deleteProgram = async function (programId) {
+    await db.sessions.where('programId').equals(programId).delete();
+    await db.programs.delete(programId);
+  };
+  
+  var deleteCurrentProgram = async function () {
+    var program = await db.programs.where('active').equals(1).first();
     if (program) {
-      await db.sessions.where('programId').equals(program.id).delete();
-      await db.programs.update(program.id, { active: 0 }); // Mark as inactive/deleted
+      await deleteProgram(program.id);
       console.log('Program deleted locally');
     }
   };
 
   // --- SESSIONS ---
-  const getDailySession = async (sessionId) => {
-    const session = await db.sessions.get(parseInt(sessionId));
-    const history = await db.sessions
+  var getDailySession = async function (sessionId) {
+    var session = await db.sessions.get(parseInt(sessionId));
+    var history = await db.sessions
       .where('status').equals('completed')
       .limit(20)
       .toArray();
     
-    const workouts = await db.workouts.toArray();
+    var workouts = await db.workouts.toArray();
     
     // Recommendations using local engine
-    const recommendations = recommendWorkouts(workouts, history, session.sessionType);
+    var recommendations = recommendWorkouts(workouts, history, session.sessionType);
 
     return {
       session: session,
@@ -102,10 +151,11 @@ export const useData = () => {
     };
   };
 
-  const completeSession = async (data) => {
+  var completeSession = async function (data) {
     await db.sessions.update(parseInt(data.sessionId), {
       status: 'completed',
       selectedWorkoutId: data.workoutId,
+      durationSeconds: data.durationSeconds || 0,
       completedAt: new Date()
     });
     
@@ -113,6 +163,7 @@ export const useData = () => {
       sessionId: parseInt(data.sessionId),
       workoutId: data.workoutId,
       rating: data.rating,
+      difficulty: data.difficulty || 3,
       repeat: data.repeatPreference,
       notes: data.notes,
       createdAt: new Date()
@@ -122,20 +173,23 @@ export const useData = () => {
   };
 
   // --- PERSISTENCE ---
-  const requestPersistence = async () => {
+  var requestPersistence = async function () {
     if (typeof navigator !== 'undefined' && navigator.storage && navigator.storage.persist) {
-      const isPersisted = await navigator.storage.persist();
-      console.log(`Resource persistence confirmed: ${isPersisted}`);
+      var isPersisted = await navigator.storage.persist();
+      console.log('Resource persistence confirmed: ' + isPersisted);
     }
   };
 
   return {
-    getWorkouts,
-    getCurrentProgram,
-    createProgram,
-    deleteCurrentProgram,
-    getDailySession,
-    completeSession,
-    requestPersistence
+    getWorkouts: getWorkouts,
+    getCurrentProgram: getCurrentProgram,
+    getPrograms: getPrograms,
+    switchProgram: switchProgram,
+    createProgram: createProgram,
+    deleteCurrentProgram: deleteCurrentProgram,
+    deleteProgram: deleteProgram,
+    getDailySession: getDailySession,
+    completeSession: completeSession,
+    requestPersistence: requestPersistence
   };
 };

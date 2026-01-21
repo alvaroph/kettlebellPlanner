@@ -11,19 +11,31 @@ onMounted(async () => {
 });
 
 const searchQuery = ref('');
+const kettlebellFilter = ref('all');
 const expandedWorkoutId = ref(null);
 const expandedCategories = ref(new Set());
 
 // By default, expand all if there is a search query
 const filteredWorkouts = computed(() => {
   if (!workouts.value) return [];
-  if (!searchQuery.value) return workouts.value;
   
-  const query = searchQuery.value.toLowerCase();
-  return workouts.value.filter(w => 
-    w.title.toLowerCase().includes(query) || 
-    (w.focusTags && (Array.isArray(w.focusTags) ? w.focusTags : w.focusTags.split(',')).some(t => t.toLowerCase().includes(query)))
-  );
+  let result = workouts.value;
+  
+  // Search filter
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase();
+    result = result.filter(w => 
+      w.title.toLowerCase().includes(query) || 
+      (w.focusTags && (Array.isArray(w.focusTags) ? w.focusTags : w.focusTags.split(',')).some(t => t.toLowerCase().includes(query)))
+    );
+  }
+  
+  // Kettlebell type filter
+  if (kettlebellFilter.value !== 'all') {
+    result = result.filter(w => w.kettlebells === kettlebellFilter.value);
+  }
+  
+  return result;
 });
 
 const groupedWorkouts = computed(() => {
@@ -93,6 +105,21 @@ function isCategoryExpanded(tag) {
           class="w-full bg-zinc-900/50 border border-zinc-800 rounded-3xl py-5 pl-14 pr-6 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-bold placeholder:text-zinc-600 shadow-xl"
         />
       </div>
+      
+      <!-- Kettlebell Filter -->
+      <div class="flex items-center gap-2 mt-4">
+        <button 
+          v-for="filter in ['all', 'single', 'double']" 
+          :key="filter"
+          @click="kettlebellFilter = filter"
+          class="px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border"
+          :class="kettlebellFilter === filter 
+            ? 'bg-orange-500 border-orange-500 text-white shadow-lg shadow-orange-500/20' 
+            : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'"
+        >
+          {{ filter }}
+        </button>
+      </div>
     </div>
 
     <div v-if="pending" class="flex items-center justify-center py-20">
@@ -142,6 +169,16 @@ function isCategoryExpanded(tag) {
                 <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-clock"></div>{{ workout.durationMinutes }} Min</div>
                 <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-activity"></div>Lvl {{ workout.difficulty }}</div>
                 <div class="flex items-center gap-1.5"><div class="h-3 w-3 icon-mask i-lucide-award"></div>{{ workout.format }}</div>
+                
+                <!-- Kettlebell Type Icon -->
+                <div v-if="workout.kettlebells" class="flex items-center gap-1 bg-zinc-900/50 px-2 py-1 rounded-lg border border-zinc-800/50 ml-auto">
+                   <div v-if="workout.kettlebells === 'single'" class="h-3 w-3 icon-mask i-lucide-dumbbell bg-zinc-500"></div>
+                   <div v-else class="flex items-center -space-x-1">
+                      <div class="h-3 w-3 icon-mask i-lucide-dumbbell bg-orange-500"></div>
+                      <div class="h-3 w-3 icon-mask i-lucide-dumbbell bg-orange-500 scale-90 opacity-80"></div>
+                   </div>
+                   <span class="text-[8px] italic" :class="workout.kettlebells === 'single' ? 'text-zinc-500' : 'text-orange-500'">{{ workout.kettlebells }}</span>
+                </div>
               </div>
             </div>
 
@@ -165,9 +202,9 @@ function isCategoryExpanded(tag) {
                 <span class="text-[10px] font-black uppercase text-orange-500 tracking-widest">Your Intelligence</span>
                 <div class="flex flex-col gap-2">
                   <div v-for="(f, fIdx) in workout.feedbacks" :key="fIdx" class="bg-zinc-950/50 border border-zinc-800/50 p-4 rounded-2xl flex flex-col gap-2 relative">
-                    <div class="flex justify-between items-center">
-                       <div class="flex gap-1 text-orange-500">
-                         <div v-for="star in 5" :key="star" class="h-3 w-3" :class="star <= f.rating ? 'i-lucide-star-filled' : 'i-lucide-star'"></div>
+                     <div class="flex justify-between items-center">
+                       <div class="flex gap-1">
+                         <div v-for="star in 5" :key="star" class="h-3 w-3 icon-mask" :class="star <= f.rating ? 'i-lucide-star bg-orange-500' : 'i-lucide-star bg-zinc-800'"></div>
                        </div>
                        <span class="text-[8px] font-black text-zinc-600 uppercase">{{ new Date(f.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }}</span>
                     </div>
@@ -188,5 +225,4 @@ function isCategoryExpanded(tag) {
 </template>
 
 <style scoped>
-.i-lucide-star-filled { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23f97316' stroke='%23f97316' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E"); }
 </style>
