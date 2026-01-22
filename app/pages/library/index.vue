@@ -1,6 +1,6 @@
 <script setup>
 // pages/library/index.vue
-const { getWorkouts } = useData();
+const { getWorkouts, getExerciseDetails } = useData();
 
 const workouts = ref([]);
 const pending = ref(true);
@@ -9,6 +9,18 @@ onMounted(async () => {
   workouts.value = await getWorkouts();
   pending.value = false;
 });
+
+// Exercise Details Modal
+const showExerciseModal = ref(false);
+const selectedExerciseDetails = ref(null);
+
+async function openExerciseDetails(name) {
+  const details = await getExerciseDetails(name);
+  if (details) {
+    selectedExerciseDetails.value = details;
+    showExerciseModal.value = true;
+  }
+}
 
 const searchQuery = ref('');
 const kettlebellFilter = ref('all');
@@ -187,14 +199,22 @@ function isCategoryExpanded(tag) {
               <!-- Workout Structure Summary -->
               <div class="flex flex-col gap-3">
                  <span class="text-[10px] font-black uppercase text-orange-500 tracking-widest">Structure Preview</span>
-                 <div class="bg-zinc-950 p-4 rounded-2xl flex flex-col gap-3">
-                    <div v-for="(block, idx) in workout.blocks" :key="idx" class="flex flex-col gap-1">
-                      <span class="text-[9px] font-black uppercase text-zinc-700">{{ block.type }}</span>
-                      <p class="text-[10px] text-zinc-400 font-bold leading-relaxed">
-                        {{ block.exercises.map(e => `${e.name} (${e.reps})`).join(', ') }}
-                      </p>
-                    </div>
-                 </div>
+                     <div v-for="(block, idx) in workout.blocks" :key="idx" class="flex flex-col gap-2">
+                       <span class="text-[9px] font-black uppercase text-zinc-700">{{ block.type }}</span>
+                       <div class="flex flex-wrap gap-2">
+                         <div v-for="(e, eIdx) in block.exercises" :key="eIdx" class="flex flex-col gap-1 items-start bg-zinc-900 px-3 py-2 rounded-2xl border border-zinc-800 hover:border-orange-500/50 transition-colors group/ex">
+                            <div class="flex items-center gap-1.5">
+                               <span class="text-[10px] text-zinc-400 font-bold leading-relaxed">{{ e.name }} ({{ e.reps }})</span>
+                               <button @click.stop="openExerciseDetails(e.name)" class="h-4 w-4 rounded-full flex items-center justify-center hover:bg-orange-500/10 transition-colors">
+                                  <div class="h-2.5 w-2.5 icon-mask i-lucide-info text-zinc-600 group-hover/ex:text-orange-500"></div>
+                               </button>
+                            </div>
+                            <div v-if="e.side" class="px-1.5 py-0.5 rounded bg-orange-500/5 border border-orange-500/10 text-[7px] font-black uppercase text-orange-500/60 tracking-widest">
+                               {{ e.side === 'each' ? 'Each Side' : e.side }}
+                            </div>
+                         </div>
+                       </div>
+                     </div>
               </div>
 
               <!-- Feedback History -->
@@ -221,6 +241,63 @@ function isCategoryExpanded(tag) {
         </div>
       </div>
     </div>
+
+    <!-- Exercise Details Modal -->
+    <Teleport to="body">
+      <div v-if="showExerciseModal && selectedExerciseDetails" class="fixed inset-0 z-[100] flex items-end justify-center p-4 sm:items-center">
+        <!-- Backdrop -->
+        <div @click="showExerciseModal = false" class="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm animate-in fade-in duration-300"></div>
+        
+        <!-- Content -->
+        <div class="relative w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-t-[2.5rem] sm:rounded-3xl overflow-hidden shadow-2xl animate-in slide-in-from-bottom-10 duration-500">
+           <!-- Handle for mobile -->
+           <div class="h-1.5 w-12 bg-zinc-800 rounded-full mx-auto mt-4 mb-2 sm:hidden"></div>
+           
+           <div class="p-8">
+              <header class="flex justify-between items-start mb-6">
+                <div>
+                  <h3 class="text-3xl font-black italic uppercase italic tracking-tighter">{{ selectedExerciseDetails.name }}</h3>
+                  <p class="text-orange-500 font-black uppercase text-[10px] tracking-[0.2em] mt-1">Exercise Intelligence</p>
+                </div>
+                <button @click="showExerciseModal = false" class="h-10 w-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
+                  <div class="h-5 w-5 icon-mask i-lucide-check"></div>
+                </button>
+              </header>
+
+              <div class="flex flex-col gap-8">
+                <!-- Image Mockup -->
+                <div class="aspect-video w-full bg-zinc-950 rounded-2xl border border-zinc-800 flex items-center justify-center relative group overflow-hidden">
+                   <div class="h-full w-full bg-gradient-to-br from-orange-500/5 to-transparent"></div>
+                   <div class="flex flex-col items-center gap-3 relative z-10 transition-transform group-hover:scale-110 duration-700">
+                      <div class="h-16 w-16 icon-mask i-lucide-dumbbell bg-zinc-800"></div>
+                      <span class="text-[10px] font-black uppercase tracking-widest text-zinc-700">Motion Preview Pending</span>
+                   </div>
+                </div>
+
+                <!-- Content Tabs/Sections -->
+                <div class="flex flex-col gap-6">
+                   <div class="flex flex-col gap-2">
+                      <span class="text-[10px] font-black uppercase text-zinc-500 tracking-widest">Instructions</span>
+                      <p class="text-zinc-300 font-medium leading-relaxed italic border-l-2 border-orange-500/30 pl-4">{{ selectedExerciseDetails.instructions }}</p>
+                   </div>
+
+                   <div class="bg-orange-500/5 border border-orange-500/10 p-6 rounded-2xl flex gap-4 items-start">
+                      <div class="h-8 w-8 bg-orange-500/20 rounded-full flex items-center justify-center shrink-0">
+                         <div class="h-4 w-4 icon-mask i-lucide-lightbulb text-orange-500"></div>
+                      </div>
+                      <div class="flex flex-col gap-1">
+                         <span class="text-[10px] font-black uppercase text-orange-500">Pro Tip</span>
+                         <p class="text-sm italic text-zinc-400 font-medium leading-relaxed">{{ selectedExerciseDetails.tips }}</p>
+                      </div>
+                   </div>
+                </div>
+
+                <button @click="showExerciseModal = false" class="btn-primary w-full h-14">GOT IT</button>
+              </div>
+           </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 

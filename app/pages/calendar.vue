@@ -118,7 +118,7 @@ function getWeeks() {
           <div class="h-[2px] flex-1 bg-gradient-to-r from-zinc-800 to-transparent"></div>
         </h2>
         
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
           <NuxtLink 
             v-for="session in getSessionsByWeek(w)" 
             :key="session.id"

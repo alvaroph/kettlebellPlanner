@@ -4,7 +4,7 @@ const route = useRoute();
 const router = useRouter();
 const sessionId = route.params.id;
 
-const { getDailySession, completeSession: completeSessionRemote } = useData();
+const { getDailySession, completeSession: completeSessionRemote, getExerciseDetails } = useData();
 
 const sessionData = ref(null);
 const pending = ref(true);
@@ -17,6 +17,18 @@ onMounted(async () => {
 const selectedWorkout = ref(null);
 const showFeedback = ref(false);
 const expandedWorkoutId = ref(null);
+
+// Exercise Details Modal
+const showExerciseModal = ref(false);
+const selectedExerciseDetails = ref(null);
+
+async function openExerciseDetails(name) {
+  const details = await getExerciseDetails(name);
+  if (details) {
+    selectedExerciseDetails.value = details;
+    showExerciseModal.value = true;
+  }
+}
 
 const feedback = reactive({
   rating: 5,
@@ -246,9 +258,19 @@ function isExCompleted(blockIdx, exIdx, targetSets) {
             
             <div class="flex flex-col gap-2">
               <div v-for="(ex, exIdx) in block.exercises" :key="exIdx" class="glass-card flex items-center justify-between group overflow-hidden relative">
-                <div class="relative z-10">
-                  <h4 class="font-black italic uppercase italic text-lg transition-colors" :class="isExCompleted(idx, exIdx, ex.sets) ? 'text-zinc-500' : ''">{{ ex.name }}</h4>
-                  <p class="text-zinc-500 font-bold text-xs uppercase">{{ ex.reps }} <span v-if="ex.sets">x {{ ex.sets }} Sets</span></p>
+                <div class="relative z-10 flex flex-col gap-1">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-black italic uppercase italic text-lg transition-colors" :class="isExCompleted(idx, exIdx, ex.sets) ? 'text-zinc-500' : ''">{{ ex.name }}</h4>
+                    <button @click.stop="openExerciseDetails(ex.name)" class="h-6 w-6 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-orange-500 transition-colors">
+                      <div class="h-3 w-3 icon-mask i-lucide-info text-zinc-500 group-hover:text-orange-500"></div>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <p class="text-zinc-500 font-bold text-xs uppercase">{{ ex.reps }} <span v-if="ex.sets">x {{ ex.sets }} Sets</span></p>
+                    <div v-if="ex.side" class="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-[8px] font-black uppercase text-orange-500 tracking-widest">
+                      {{ ex.side === 'each' ? 'Each Side' : ex.side }}
+                    </div>
+                  </div>
                 </div>
                 <!-- Interactive visual: Set Clicker -->
                 <div 
@@ -354,6 +376,63 @@ function isExCompleted(blockIdx, exIdx, targetSets) {
         </div>
       </div>
     </div>
+
+    <!-- Exercise Details Modal -->
+    <Teleport to="body">
+      <div v-if="showExerciseModal && selectedExerciseDetails" class="fixed inset-0 z-[100] flex items-end justify-center p-4 sm:items-center">
+        <!-- Backdrop -->
+        <div @click="showExerciseModal = false" class="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm animate-in fade-in duration-300"></div>
+        
+        <!-- Content -->
+        <div class="relative w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-t-[2.5rem] sm:rounded-3xl overflow-hidden shadow-2xl animate-in slide-in-from-bottom-10 duration-500">
+           <!-- Handle for mobile -->
+           <div class="h-1.5 w-12 bg-zinc-800 rounded-full mx-auto mt-4 mb-2 sm:hidden"></div>
+           
+           <div class="p-8">
+              <header class="flex justify-between items-start mb-6">
+                <div>
+                  <h3 class="text-3xl font-black italic uppercase italic tracking-tighter">{{ selectedExerciseDetails.name }}</h3>
+                  <p class="text-orange-500 font-black uppercase text-[10px] tracking-[0.2em] mt-1">Exercise Intelligence</p>
+                </div>
+                <button @click="showExerciseModal = false" class="h-10 w-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-white transition-colors">
+                  <div class="h-5 w-5 icon-mask i-lucide-check"></div>
+                </button>
+              </header>
+
+              <div class="flex flex-col gap-8">
+                <!-- Image Mockup -->
+                <div class="aspect-video w-full bg-zinc-950 rounded-2xl border border-zinc-800 flex items-center justify-center relative group overflow-hidden">
+                   <div class="h-full w-full bg-gradient-to-br from-orange-500/5 to-transparent"></div>
+                   <div class="flex flex-col items-center gap-3 relative z-10 transition-transform group-hover:scale-110 duration-700">
+                      <div class="h-16 w-16 icon-mask i-lucide-dumbbell bg-zinc-800"></div>
+                      <span class="text-[10px] font-black uppercase tracking-widest text-zinc-700">Motion Preview Pending</span>
+                   </div>
+                </div>
+
+                <!-- Content Tabs/Sections -->
+                <div class="flex flex-col gap-6">
+                   <div class="flex flex-col gap-2">
+                      <span class="text-[10px] font-black uppercase text-zinc-500 tracking-widest">Instructions</span>
+                      <p class="text-zinc-300 font-medium leading-relaxed italic border-l-2 border-orange-500/30 pl-4">{{ selectedExerciseDetails.instructions }}</p>
+                   </div>
+
+                   <div class="bg-orange-500/5 border border-orange-500/10 p-6 rounded-2xl flex gap-4 items-start">
+                      <div class="h-8 w-8 bg-orange-500/20 rounded-full flex items-center justify-center shrink-0">
+                         <div class="h-4 w-4 icon-mask i-lucide-lightbulb text-orange-500"></div>
+                      </div>
+                      <div class="flex flex-col gap-1">
+                         <span class="text-[10px] font-black uppercase text-orange-500">Pro Tip</span>
+                         <p class="text-sm italic text-zinc-400 font-medium leading-relaxed">{{ selectedExerciseDetails.tips }}</p>
+                      </div>
+                   </div>
+                </div>
+
+                <button @click="showExerciseModal = false" class="btn-primary w-full h-14">GOT IT</button>
+              </div>
+           </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 

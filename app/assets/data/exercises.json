@@ -1,0 +1,653 @@
+[
+  {
+    "id": "halo",
+    "name": "Halo",
+    "instructions": "Hold the KB by the horns upside down. Circle it around your head tightly, keeping your elbows close to your body.",
+    "tips": "Keep your core tight and ribs down. Don't let your head bobble.",
+    "image_url": "images/halo.jpg"
+  },
+  {
+    "id": "slingshot",
+    "name": "Slingshot",
+    "instructions": "Pass the kettlebell around your body from hand to hand. Keep hips square and feet rooted.",
+    "tips": "Arms should be long and loose. Do not twist your hips.",
+    "image_url": "images/slingshot.jpg"
+  },
+  {
+    "id": "goblet_squat",
+    "name": "Goblet Squat",
+    "instructions": "Hold the bell by the horns at chest level. Squat down, keeping your chest up and back straight.",
+    "tips": "Push your knees out and drive through your heels.",
+    "image_url": "images/goblet_squat.jpg"
+  },
+  {
+    "id": "overhead_press",
+    "name": "Overhead Press",
+    "instructions": "Press the bell from the rack position straight up until the arm is locked out by your ear.",
+    "tips": "Keep your glutes squeezed to protect your lower back. Do not lean back.",
+    "image_url": "images/press.jpg"
+  },
+  {
+    "id": "swing",
+    "name": "Kettlebell Swing",
+    "instructions": "Hinge at the hips, hike the bell back, and snap your hips forward to float the bell to chest height.",
+    "tips": "It's a hinge, not a squat. Power comes from the glutes, not the shoulders.",
+    "image_url": "images/swing.jpg"
+  },
+  {
+    "id": "swing_1h",
+    "name": "One-Arm Swing",
+    "instructions": "Perform a swing using only one arm. The free arm can swing outside or guard the chest.",
+    "tips": "Keep your shoulders square. Fight the rotation.",
+    "image_url": "images/swing_1h.jpg"
+  },
+  {
+    "id": "swing_h2h",
+    "name": "Hand-to-Hand Swing",
+    "instructions": "Perform a one-arm swing, but switch hands at the top of the float (weightless moment).",
+    "tips": "Wait for the bell to float before switching. Ensure a secure grip before dropping.",
+    "image_url": "images/swing_h2h.jpg"
+  },
+  {
+    "id": "joint_rotation",
+    "name": "Joint Rotation",
+    "instructions": "Gently rotate ankles, knees, hips, shoulders, elbows, wrists, and neck.",
+    "tips": "Smooth, controlled movements. No pain allowed.",
+    "image_url": "images/joint_rotation.jpg"
+  },
+  {
+    "id": "world_greatest_stretch",
+    "name": "World's Greatest Stretch",
+    "instructions": "Lunge forward, place opposite hand on floor, rotate torso towards the front leg reaching up.",
+    "tips": "Keep the back leg straight and active.",
+    "image_url": "images/wgs.jpg"
+  },
+  {
+    "id": "cossack_squat",
+    "name": "Cossack Squat",
+    "instructions": "Shift weight to one side, squatting on that leg while keeping the other leg straight and heel on floor.",
+    "tips": "Keep the heel of the squatting leg flat on the ground.",
+    "image_url": "images/cossack.jpg"
+  },
+  {
+    "id": "plank_pullthrough",
+    "name": "Plank Pullthrough",
+    "instructions": "From a high plank, reach under your body with one hand to pull the KB from the opposite side to the outside.",
+    "tips": "Keep hips completely still and square to the floor.",
+    "image_url": "images/plank_pull.jpg"
+  },
+  {
+    "id": "russian_twist",
+    "name": "Russian Twist",
+    "instructions": "Sit on floor, lean back slightly, lift feet. Rotate torso moving the KB from side to side.",
+    "tips": "Follow the weight with your eyes. Control the rotation.",
+    "image_url": "images/russian_twist.jpg"
+  },
+  {
+    "id": "farmers_walk",
+    "name": "Farmer's Walk",
+    "instructions": "Hold a heavy weight in each hand (or one). Walk with a tall posture.",
+    "tips": "Imagine a string pulling your head up. Don't let the weights bang your legs.",
+    "image_url": "images/farmers_walk.jpg"
+  },
+  {
+    "id": "rack_carry",
+    "name": "Rack Carry",
+    "instructions": "Walk while holding the kettlebells in the rack position (hands by chin, elbows on ribs).",
+    "tips": "Keep your chest up and breathe behind the shield (tight core).",
+    "image_url": "images/rack_carry.jpg"
+  },
+  {
+    "id": "waiters_walk",
+    "name": "Waiter's Walk",
+    "instructions": "Walk with the kettlebell locked out overhead.",
+    "tips": "Keep your arm vertical and shoulder packed down.",
+    "image_url": "images/waiters_walk.jpg"
+  },
+  {
+    "id": "push_press",
+    "name": "Push Press",
+    "instructions": "Dip your knees slightly and drive up explosively to help press the bell overhead.",
+    "tips": "Use your legs to generate the initial power. Lock out tight.",
+    "image_url": "images/push_press.jpg"
+  },
+  {
+    "id": "front_squat",
+    "name": "Front Squat",
+    "instructions": "Squat with one or two kettlebells in the rack position.",
+    "tips": "Elbows up! Don't let the weight pull you forward.",
+    "image_url": "images/front_squat.jpg"
+  },
+  {
+    "id": "glute_bridge",
+    "name": "Glute Bridge",
+    "instructions": "Lie on back, knees bent. Lift hips until body is straight from shoulders to knees.",
+    "tips": "Squeeze glutes at the top. Don't hyperextend the lower back.",
+    "image_url": "images/glute_bridge.jpg"
+  },
+  {
+    "id": "reverse_lunge",
+    "name": "Reverse Lunge",
+    "instructions": "Step backward and lower your hips until both knees are bent at 90 degrees.",
+    "tips": "Keep your front knee over your ankle. Torso upright.",
+    "image_url": "images/reverse_lunge.jpg"
+  },
+  {
+    "id": "burpee",
+    "name": "Burpee",
+    "instructions": "Drop to chest-to-floor, jump feet in, and jump up with a clap.",
+    "tips": "Brace core when dropping to protect the spine.",
+    "image_url": "images/burpee.jpg"
+  },
+  {
+    "id": "mountain_climber",
+    "name": "Mountain Climber",
+    "instructions": "High plank position. Drive knees to chest alternately at speed.",
+    "tips": "Keep hips low and shoulders over wrists.",
+    "image_url": "images/mountain_climber.jpg"
+  },
+  {
+    "id": "row",
+    "name": "Row",
+    "instructions": "Hinge forward. Pull the KB to your hip bone, retracting the shoulder blade.",
+    "tips": "Keep back flat. Don't rotate the torso.",
+    "image_url": "images/row.jpg"
+  },
+  {
+    "id": "floor_press",
+    "name": "Floor Press",
+    "instructions": "Lie on back. Press the bell from tricep-on-floor to full extension.",
+    "tips": "Legs can be straight or bent. Keep elbows tucked 45 degrees.",
+    "image_url": "images/floor_press.jpg"
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "instructions": "Hold a straight body line on forearms and toes.",
+    "tips": "Squeeze glutes and quads. Don't let hips sag.",
+    "image_url": "images/plank.jpg"
+  },
+  {
+    "id": "dead_bug",
+    "name": "Dead Bug",
+    "instructions": "Lie on back, arms and legs up. Lower opposite arm and leg slowly.",
+    "tips": "Keep lower back glued to the floor at all times.",
+    "image_url": "images/dead_bug.jpg"
+  },
+  {
+    "id": "side_plank",
+    "name": "Side Plank",
+    "instructions": "Balance on one forearm and side of foot. Lift hips high.",
+    "tips": "Straight line from head to heels.",
+    "image_url": "images/side_plank.jpg"
+  },
+  {
+    "id": "deadlift",
+    "name": "Deadlift",
+    "instructions": "Hinge hips back, grab handle, drive feet into floor to stand tall.",
+    "tips": "Neutral spine. Shoulders higher than hips.",
+    "image_url": "images/deadlift.jpg"
+  },
+  {
+    "id": "clean",
+    "name": "Clean",
+    "instructions": "Swing the bell and zip it up tight to the body to land softly in the rack.",
+    "tips": "Tame the arc. Elbow connects to ribs quickly.",
+    "image_url": "images/clean.jpg"
+  },
+  {
+    "id": "deep_squat_hold",
+    "name": "Deep Squat Hold",
+    "instructions": "Sit at the bottom of a squat. Relax and breathe.",
+    "tips": "Keep heels down. Use weight as counterbalance if needed.",
+    "image_url": "images/squat_hold.jpg"
+  },
+  {
+    "id": "push_up",
+    "name": "Push-up",
+    "instructions": "Plank position. Lower chest to floor and press back up.",
+    "tips": "Elbows at 45 degrees. Body moves as one unit.",
+    "image_url": "images/push_up.jpg"
+  },
+  {
+    "id": "tgu",
+    "name": "Turkish Get Up",
+    "instructions": "Stand up from lying down while keeping the weight locked overhead.",
+    "tips": "Keep eyes on the bell. Move deliberately through each step.",
+    "image_url": "images/tgu.jpg"
+  },
+  {
+    "id": "rack_squat",
+    "name": "Rack Squat",
+    "instructions": "Squat with one kettlebell in the rack position.",
+    "tips": "Fight the rotation. Keep torso vertical.",
+    "image_url": "images/rack_squat.jpg"
+  },
+  {
+    "id": "suitcase_deadlift",
+    "name": "Suitcase Deadlift",
+    "instructions": "Deadlift with the bell on the outside of one foot.",
+    "tips": "Don't tilt sideways. Keep shoulders square.",
+    "image_url": "images/suitcase_dl.jpg"
+  },
+  {
+    "id": "snatch",
+    "name": "Snatch",
+    "instructions": "Explode the bell from hips to overhead in one fluid motion.",
+    "tips": "Punch through at the top. Don't let it bang your wrist.",
+    "image_url": "images/snatch.jpg"
+  },
+  {
+    "id": "sumo_deadlift",
+    "name": "Sumo Deadlift",
+    "instructions": "Wide stance, toes out. Bell between legs. Deadlift mechanics.",
+    "tips": "Knees track over toes. Chest stays tall.",
+    "image_url": "images/sumo_dl.jpg"
+  },
+  {
+    "id": "clean_and_press",
+    "name": "Clean & Press",
+    "instructions": "Clean the bell to rack, then Press it overhead.",
+    "tips": "Pause briefly in the rack before pressing.",
+    "image_url": "images/clean_press.jpg"
+  },
+  {
+    "id": "bottom_up_press",
+    "name": "Bottom-Up Press",
+    "instructions": "Press the bell holding it upside down (bottoms up).",
+    "tips": "Crush grip the handle. Focus on stability.",
+    "image_url": "images/bu_press.jpg"
+  },
+  {
+    "id": "lunge",
+    "name": "Lunge",
+    "instructions": "Standard lunge, can be forward or backward.",
+    "tips": "Control the descent. Don't slam the knee.",
+    "image_url": "images/lunge.jpg"
+  },
+  {
+    "id": "pistol_squat",
+    "name": "Pistol Squat",
+    "instructions": "One-legged squat with the other leg straight out in front.",
+    "tips": "Use a box or suspension trainer if needed for balance.",
+    "image_url": "images/pistol.jpg"
+  },
+  {
+    "id": "renegade_row",
+    "name": "Renegade Row",
+    "instructions": "Push-up position holding KBs. Row one bell while pressing down on the other.",
+    "tips": "Wide feet for stability. Do not twist hips.",
+    "image_url": "images/renegade.jpg"
+  },
+  {
+    "id": "windmill",
+    "name": "Windmill",
+    "instructions": "Weight overhead. Hinge at hips pushing butt towards the loaded side, reach opposite hand to floor.",
+    "tips": "Keep the back leg straight. Look at the bell.",
+    "image_url": "images/windmill.jpg"
+  },
+  {
+    "id": "pull_up",
+    "name": "Pull-up",
+    "instructions": "Hang from bar. Pull chest to bar.",
+    "tips": "Depress shoulders away from ears.",
+    "image_url": "images/pull_up.jpg"
+  },
+  {
+    "id": "single_leg_deadlift",
+    "name": "Single Leg Deadlift",
+    "instructions": "Hinge on one leg, lifting the other straight back like a lever.",
+    "tips": "Hips square to floor. Soft bend in standing knee.",
+    "image_url": "images/sldl.jpg"
+  },
+  {
+    "id": "figure_8",
+    "name": "Figure 8",
+    "instructions": "Pass the bell through legs in a figure-8 pattern.",
+    "tips": "Keep chest up. Move fluidly.",
+    "image_url": "images/figure8.jpg"
+  },
+  {
+    "id": "bottom_up_pushup",
+    "name": "Bottom-Up Push-up",
+    "instructions": "Push-ups on the handles of kettlebells (or balancing on the ball if advanced).",
+    "tips": "Extreme stability required. Be careful of wrists.",
+    "image_url": "images/bu_pushup.jpg"
+  },
+  {
+    "id": "lateral_lunge",
+    "name": "Lateral Lunge",
+    "instructions": "Step to the side, squatting on that leg while keeping the other straight.",
+    "tips": "Keep both heels down. Hips back.",
+    "image_url": "images/lat_lunge.jpg"
+  },
+  {
+    "id": "jump_squat",
+    "name": "Jump Squat",
+    "instructions": "Squat down and explode up into a jump.",
+    "tips": "Land softly (toe-ball-heel).",
+    "image_url": "images/jump_squat.jpg"
+  },
+  {
+    "id": "high_pull",
+    "name": "High Pull",
+    "instructions": "Like a swing/clean but pull the elbow high and back at the top.",
+    "tips": "Don't let the bell droop at the top. Powerful hips.",
+    "image_url": "images/high_pull.jpg"
+  },
+  {
+    "id": "hollow_hold",
+    "name": "Hollow Hold",
+    "instructions": "Balance on lower back, arms and legs extended and hovering.",
+    "tips": "Lower back MUST touch floor. Crush your abs.",
+    "image_url": "images/hollow_hold.jpg"
+  },
+  {
+    "id": "clean_and_jerk",
+    "name": "Clean & Jerk",
+    "instructions": "Clean to rack, then Jerk (dip-drive-dip) overhead.",
+    "tips": "Use legs for both parts of the movement.",
+    "image_url": "images/clean_jerk.jpg"
+  },
+  {
+    "id": "wall_sit",
+    "name": "Wall Sit",
+    "instructions": "Sit against a wall with knees at 90 degrees.",
+    "tips": "Press lower back into wall. Breathe.",
+    "image_url": "images/wall_sit.jpg"
+  },
+  {
+    "id": "jerk",
+    "name": "Jerk",
+    "instructions": "Dip legs, drive bell up, dip again to catch underneath.",
+    "tips": "Fast elbows. Get under the weight.",
+    "image_url": "images/jerk.jpg"
+  },
+  {
+    "id": "staggered_squat",
+    "name": "Staggered Squat",
+    "instructions": "Squat with one foot slightly behind (heel up), taking 20% of weight.",
+    "tips": "Focus load on the front leg.",
+    "image_url": "images/staggered_squat.jpg"
+  },
+  {
+    "id": "thruster",
+    "name": "Thruster",
+    "instructions": "Fluid combo of Squat and Press. Use squat rebound to launch weight.",
+    "tips": "One motion. Don't stop at the rack.",
+    "image_url": "images/thruster.jpg"
+  },
+  {
+    "id": "crush_curl",
+    "name": "Crush Curl",
+    "instructions": "Bicep curl holding the bell by the ball, squeezing hands together.",
+    "tips": "Keep elbows pinned to sides.",
+    "image_url": "images/crush_curl.jpg"
+  },
+  {
+    "id": "see_saw_press",
+    "name": "See-Saw Press",
+    "instructions": "Double KB. As one goes up, the other comes down.",
+    "tips": "Create a rhythm. Keep core tight.",
+    "image_url": "images/see_saw.jpg"
+  },
+  {
+    "id": "front_raise",
+    "name": "Front Raise",
+    "instructions": "Lift bell with straight arms to shoulder height.",
+    "tips": "No swinging. Control the down phase.",
+    "image_url": "images/front_raise.jpg"
+  },
+  {
+    "id": "kneeling_halo",
+    "name": "Kneeling Halo",
+    "instructions": "Perform halos while in a half-kneeling or tall-kneeling position.",
+    "tips": "Challenge core stability. Don't wobble.",
+    "image_url": "images/kneeling_halo.jpg"
+  },
+  {
+    "id": "plank_drag",
+    "name": "Plank Drag",
+    "instructions": "In plank, drag the bell from side to side under body.",
+    "tips": "Anti-rotation. Hips still.",
+    "image_url": "images/plank_drag.jpg"
+  },
+  {
+    "id": "figure_8_lunge",
+    "name": "Figure 8 Lunge",
+    "instructions": "Lunge and pass the bell under the lead leg.",
+    "tips": "Keep chest up while passing.",
+    "image_url": "images/fig8_lunge.jpg"
+  },
+  {
+    "id": "good_morning",
+    "name": "Good Morning",
+    "instructions": "Hold bell at chest or on back. Hinge hips back with slight knee bend.",
+    "tips": "Feel hamstrings stretch. Flat back.",
+    "image_url": "images/good_morning.jpg"
+  },
+  {
+    "id": "pull_over",
+    "name": "Pull-Over",
+    "instructions": "Lie on back. Lower bell behind head with slightly bent arms, pull back to chest.",
+    "tips": "Keep ribs down. Engage lats.",
+    "image_url": "images/pull_over.jpg"
+  },
+  {
+    "id": "upright_row",
+    "name": "Upright Row",
+    "instructions": "Pull bell vertically close to body towards chin.",
+    "tips": "Elbows higher than hands at top.",
+    "image_url": "images/upright_row.jpg"
+  },
+  {
+    "id": "viking_push_press",
+    "name": "Viking Push Press",
+    "instructions": "Push Press where you keep dipping and driving rhythmically.",
+    "tips": "Use the legs heavily.",
+    "image_url": "images/viking_press.jpg"
+  },
+  {
+    "id": "pry_squat",
+    "name": "Pry Squat",
+    "instructions": "In bottom of squat, push knees out with elbows and rock gently.",
+    "tips": "Open the hips.",
+    "image_url": "images/pry_squat.jpg"
+  },
+  {
+    "id": "split_squat",
+    "name": "Split Squat",
+    "instructions": "Stationary lunge. Up and down in split stance.",
+    "tips": "Vertical torso.",
+    "image_url": "images/split_squat.jpg"
+  },
+  {
+    "id": "around_the_world",
+    "name": "Around the World",
+    "instructions": "Pass bell around the body in a circle.",
+    "tips": "Tight core. Don't let weight pull you.",
+    "image_url": "images/atw.jpg"
+  },
+  {
+    "id": "tactical_swing",
+    "name": "Tactical Swing",
+    "instructions": "Swing switching hands at the top (Hand-to-Hand).",
+    "tips": "Smooth transition.",
+    "image_url": "images/tac_swing.jpg"
+  },
+  {
+    "id": "close_grip_floor_press",
+    "name": "Close Grip Floor Press",
+    "instructions": "Floor press holding the bell by the ball with both hands.",
+    "tips": "Focus on triceps.",
+    "image_url": "images/cg_press.jpg"
+  },
+  {
+    "id": "overhead_tricep_extension",
+    "name": "Overhead Tricep Extension",
+    "instructions": "Hold bell overhead. Lower behind head bending elbows.",
+    "tips": "Elbows point forward/up, not out.",
+    "image_url": "images/tri_ext.jpg"
+  },
+  {
+    "id": "hamstring_stretch",
+    "name": "Hamstring Stretch",
+    "instructions": "Basic stretch for back of thigh.",
+    "tips": "Breathe into the tension.",
+    "image_url": "images/ham_stretch.jpg"
+  },
+  {
+    "id": "arm_bar",
+    "name": "Arm Bar",
+    "instructions": "Lying on side, arm vertical with bell. Rotate hips towards floor.",
+    "tips": "Stabilize shoulder. Keep eye on bell.",
+    "image_url": "images/arm_bar.jpg"
+  },
+  {
+    "id": "bottom_up_hold",
+    "name": "Bottom-Up Hold",
+    "instructions": "Hold bell upside down in rack or press position.",
+    "tips": "Grip strength focus.",
+    "image_url": "images/bu_hold.jpg"
+  },
+  {
+    "id": "frog_pump",
+    "name": "Frog Pump",
+    "instructions": "Glute bridge with soles of feet touching and knees out.",
+    "tips": "Pump hips fast. Chin tucked.",
+    "image_url": "images/frog_pump.jpg"
+  },
+  {
+    "id": "hip_flexor_stretch",
+    "name": "Hip Flexor Stretch",
+    "instructions": "Half kneeling. Tuck pelvis and lean slightly forward.",
+    "tips": "Squeeze glute of trailing leg.",
+    "image_url": "images/hip_stretch.jpg"
+  },
+  {
+    "id": "90_90_switch",
+    "name": "90/90 Switch",
+    "instructions": "Sitting with legs in 90/90 angles. Rotate hips to switch sides.",
+    "tips": "Try to do it without hands.",
+    "image_url": "images/9090.jpg"
+  },
+  {
+    "id": "towel_curl",
+    "name": "Towel Curl",
+    "instructions": "Loop towel through handle. Curl holding the towel ends.",
+    "tips": "Hammer grip. Squeeze at top.",
+    "image_url": "images/towel_curl.jpg"
+  },
+  {
+    "id": "arnold_press",
+    "name": "Arnold Press",
+    "instructions": "Press rotating palms from facing you to facing away.",
+    "tips": "Smooth rotation.",
+    "image_url": "images/arnold.jpg"
+  },
+  {
+    "id": "lateral_raise",
+    "name": "Lateral Raise",
+    "instructions": "Raise light bells to the side to shoulder height.",
+    "tips": "Lead with elbows.",
+    "image_url": "images/lat_raise.jpg"
+  },
+  {
+    "id": "step_up",
+    "name": "Step-Up",
+    "instructions": "Step onto a box/bench driving through the top leg.",
+    "tips": "Control the way down.",
+    "image_url": "images/step_up.jpg"
+  },
+  {
+    "id": "jefferson_curl",
+    "name": "Jefferson Curl",
+    "instructions": "Stand on box. Roll spine down vertebrae by vertebrae with light weight.",
+    "tips": "Go slow. Do not force range.",
+    "image_url": "images/jefferson.jpg"
+  },
+  {
+    "id": "cat_cow",
+    "name": "Cat-Cow",
+    "instructions": "Quadruped. Arch back up, then sink belly down.",
+    "tips": "Move with breath.",
+    "image_url": "images/cat_cow.jpg"
+  },
+  {
+    "id": "squeeze_press",
+    "name": "Squeeze Press",
+    "instructions": "Press two bells while pushing them together hard.",
+    "tips": "Constant inward tension.",
+    "image_url": "images/squeeze_press.jpg"
+  },
+  {
+    "id": "diamond_push_up",
+    "name": "Diamond Push-up",
+    "instructions": "Push-up with hands close together forming a diamond.",
+    "tips": "Tricep focus.",
+    "image_url": "images/diamond_push.jpg"
+  },
+  {
+    "id": "pendlay_row",
+    "name": "Pendlay Row",
+    "instructions": "Bent over row starting from dead stop on floor each rep.",
+    "tips": "Explosive pull. Strict back angle.",
+    "image_url": "images/pendlay.jpg"
+  },
+  {
+    "id": "slingshot",
+    "name": "Slingshot",
+    "instructions": "Pass KB around body while keeping hips steady.",
+    "tips": "Similar to Around the World.",
+    "image_url": "images/slingshot.jpg"
+  },
+  {
+    "id": "tactical_lunge",
+    "name": "Tactical Lunge",
+    "instructions": "Lunge backwards and pass the bell under the front leg to the other hand.",
+    "tips": "Coordination key. Keep chest up.",
+    "image_url": "images/tac_lunge.jpg"
+  },
+  {
+    "id": "half_snatch",
+    "name": "Half Snatch",
+    "instructions": "Snatch up, but lower to rack position before dropping.",
+    "tips": "Easier on the grip than full snatch.",
+    "image_url": "images/half_snatch.jpg"
+  },
+  {
+    "id": "american_swing",
+    "name": "American Swing",
+    "instructions": "Swing the bell all the way overhead.",
+    "tips": "Careful with shoulder mobility. Don't overextend back.",
+    "image_url": "images/american_swing.jpg"
+  },
+  {
+    "id": "supported_row",
+    "name": "Supported Row",
+    "instructions": "Row with hand on bench or knee for support.",
+    "tips": "Isolate the lat.",
+    "image_url": "images/supp_row.jpg"
+  },
+  {
+    "id": "double_jerk",
+    "name": "Double Jerk",
+    "instructions": "Jerk with two bells.",
+    "tips": "Requires good mobility.",
+    "image_url": "images/double_jerk.jpg"
+  },
+  {
+    "id": "double_clean",
+    "name": "Double Clean",
+    "instructions": "Clean two bells at once.",
+    "tips": "Wide stance.",
+    "image_url": "images/double_clean.jpg"
+  },
+  {
+    "id": "double_snatch",
+    "name": "Double Snatch",
+    "instructions": "Snatch two bells at once.",
+    "tips": "Advanced move. Wide stance.",
+    "image_url": "images/double_snatch.jpg"
+  }
+]

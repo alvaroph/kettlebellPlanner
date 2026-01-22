@@ -1,5 +1,6 @@
 import { db } from '../services/database';
 import { generateStructure, recommendWorkouts } from '../utils/planner';
+import exercisesData from '~/assets/data/exercises.json';
 
 /**
  * Repository Composable (Serverless)
@@ -180,8 +181,15 @@ export var useData = function () {
     }
   };
 
+  // --- EXERCISES ---
+  var getExerciseDetails = function (name) {
+    if (!name) return null;
+    return exercisesData.find(e => e.name.toLowerCase() === name.toLowerCase()) || null;
+  };
+
   return {
     getWorkouts: getWorkouts,
+    getExerciseDetails: getExerciseDetails,
     getCurrentProgram: getCurrentProgram,
     getPrograms: getPrograms,
     switchProgram: switchProgram,
