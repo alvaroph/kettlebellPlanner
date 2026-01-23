@@ -205,9 +205,12 @@ function isExCompleted(blockIdx, exIdx, targetSets) {
                        <div class="h-[1px] flex-1 bg-zinc-800"></div>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                       <div v-for="(ex, exIdx) in block.exercises" :key="exIdx" class="px-3 py-2 bg-zinc-950 border border-zinc-800/50 rounded-xl flex items-center gap-2 shadow-sm">
+                       <div v-for="(ex, exIdx) in block.exercises" :key="exIdx" class="px-3 py-2 bg-zinc-950 border border-zinc-800/50 rounded-xl flex items-center gap-2 shadow-sm group/ex relative">
                          <span class="text-[11px] font-bold text-zinc-200">{{ ex.name }}</span>
                          <span class="text-[10px] font-black text-orange-500 opacity-60 italic">{{ ex.reps }}</span>
+                         <button @click.stop="openExerciseDetails(ex.name)" class="ml-1 h-4 w-4 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-orange-500 transition-colors">
+                           <div class="h-2 w-2 icon-mask i-lucide-info text-zinc-500 group-hover/ex:text-orange-500"></div>
+                         </button>
                        </div>
                     </div>
                   </div>

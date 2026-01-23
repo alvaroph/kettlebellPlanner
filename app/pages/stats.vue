@@ -11,10 +11,10 @@ function getDaysInMonth(year, month) {
 }
 
 onMounted(async () => {
-  const sessions = await db.sessions
-    .where('status').equals('completed')
-    .reverse()
-    .toArray();
+  const [sessions, feedback] = await Promise.all([
+    db.sessions.where('status').equals('completed').reverse().toArray(),
+    db.feedback.toArray()
+  ]);
 
   const totalSessions = sessions.length;
   const totalDuration = sessions.reduce((acc, s) => acc + (s.durationSeconds || 0), 0);
@@ -25,7 +25,10 @@ onMounted(async () => {
     if (s.completedAt) {
       const date = new Date(s.completedAt).toISOString().split('T')[0];
       if (!heatmap[date]) heatmap[date] = [];
-      heatmap[date].push(s);
+      
+      // Attach feedback to session
+      const f = feedback.find(fb => fb.sessionId === s.id);
+      heatmap[date].push({ ...s, feedback: f });
     }
   });
 
@@ -57,15 +60,46 @@ const calendarDays = computed(() => {
   for (let i = 1; i <= daysInMonth; i++) {
     const dateStr = `${currentYear.value}-${String(currentMonth.value + 1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
     const sessions = stats.value?.heatmap[dateStr] || [];
+    
+    // Calculate average intensity for the day
+    let avgIntensity = 0;
+    if (sessions.length > 0) {
+      const sum = sessions.reduce((acc, s) => acc + (s.feedback?.difficulty || 3), 0);
+      avgIntensity = sum / sessions.length;
+    }
+
     days.push({
       day: i,
       date: dateStr,
       hasSession: sessions.length > 0,
-      count: sessions.length
+      count: sessions.length,
+      intensity: avgIntensity,
+      sessions: sessions
     });
   }
   return days;
 });
+
+// Modal Logic
+const selectedDay = ref(null);
+const showModal = ref(false);
+
+function openDayDetails(day) {
+  if (day.hasSession) {
+    selectedDay.value = day;
+    showModal.value = true;
+  }
+}
+
+const { getWorkouts } = useData();
+const workouts = ref([]);
+onMounted(async () => {
+  workouts.value = await getWorkouts();
+});
+
+function getWorkoutTitle(id) {
+  return workouts.value.find(w => w.id === id)?.title || 'Unknown Workout';
+}
 
 const monthName = computed(() => {
   return new Date(currentYear.value, currentMonth.value).toLocaleString('default', { month: 'long', year: 'numeric' });
@@ -74,7 +108,10 @@ const monthName = computed(() => {
 function formatDuration(seconds) {
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
-  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+  const s = seconds % 60;
+  if (h > 0) return `${h}h ${m}m`;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
 }
 </script>
 
