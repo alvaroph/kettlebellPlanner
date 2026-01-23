@@ -9,10 +9,18 @@ const { getDailySession, completeSession: completeSessionRemote, getExerciseDeta
 const sessionData = ref(null);
 const pending = ref(true);
 
-onMounted(async () => {
-  sessionData.value = await getDailySession(sessionId);
+async function loadSessionData(excludeIds = []) {
+  pending.value = true;
+  sessionData.value = await getDailySession(sessionId, excludeIds);
   pending.value = false;
-});
+}
+
+onMounted(loadSessionData);
+
+async function regenerateOptions() {
+  const currentIds = sessionData.value?.recommendations?.map(r => r.id) || [];
+  await loadSessionData(currentIds);
+}
 
 const selectedWorkout = ref(null);
 const showFeedback = ref(false);
@@ -161,25 +169,25 @@ function isExCompleted(blockIdx, exIdx, targetSets) {
           <img src="/pwa-512x512.png" alt="IronHabit Logo" class="h-16 w-16 object-contain grayscale-[0.2] brightness-125 -mt-2" />
         </header>
 
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-6">
           <div 
             v-for="workout in sessionData.recommendations" 
             :key="workout.id"
             class="flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden transition-all duration-300"
-            :class="expandedWorkoutId === workout.id ? 'ring-2 ring-orange-500 scale-[1.02] shadow-2xl shadow-orange-500/10' : 'active:scale-95'"
+            :class="expandedWorkoutId === workout.id ? 'ring-2 ring-orange-500 scale-[1.02] shadow-2xl shadow-orange-500/10' : 'active:scale-[0.98]'"
           >
             <!-- Card Body -->
             <div @click="togglePreview(workout.id)" class="p-6 flex items-center justify-between cursor-pointer">
               <div class="flex items-center gap-4">
                 <div class="h-12 w-12 bg-zinc-950 rounded-full flex items-center justify-center text-orange-500 border border-zinc-800">
-                  <div class="h-6 w-6 icon-mask i-lucide-activity"></div>
+                  <div class="h-6 w-6 icon-mask i-lucide-award"></div>
                 </div>
                 <div>
                   <h3 class="font-black italic uppercase italic leading-tight">{{ workout.title }}</h3>
                   <div class="flex items-center gap-3 text-[10px] font-black uppercase text-zinc-600 mt-1">
-                    <span>{{ workout.durationMinutes }} Min</span>
+                    <span class="flex items-center gap-1"><div class="h-3 w-3 icon-mask i-lucide-clock"></div> {{ workout.durationMinutes }} Min</span>
                     <span class="h-1 w-1 rounded-full bg-zinc-800"></span>
-                    <span>LVL {{ workout.difficulty }}</span>
+                    <span class="flex items-center gap-1"><div class="h-3 w-3 icon-mask i-lucide-zap"></div> LVL {{ workout.difficulty }}</span>
                   </div>
                 </div>
               </div>
@@ -190,25 +198,39 @@ function isExCompleted(blockIdx, exIdx, targetSets) {
 
             <!-- Expandable Preview -->
             <div v-if="expandedWorkoutId === workout.id" class="px-6 pb-6 animate-in slide-in-from-top-2 duration-300">
-               <div class="py-4 border-t border-zinc-800 flex flex-col gap-4">
-                  <div v-for="(block, idx) in parseBlocks(workout.blocks)" :key="idx" class="flex flex-col gap-1">
-                    <span class="text-[10px] font-black uppercase text-orange-500/60">{{ block.type }}</span>
-                    <p class="text-xs text-zinc-400">
-                       <span v-for="(ex, exIdx) in block.exercises" :key="exIdx">
-                         {{ ex.name }} ({{ ex.reps }}){{ exIdx < block.exercises.length - 1 ? ', ' : '' }}
-                       </span>
-                    </p>
+               <div class="py-4 border-t border-zinc-800 flex flex-col gap-6">
+                  <div v-for="(block, idx) in parseBlocks(workout.blocks)" :key="idx" class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
+                       <span class="px-2 py-0.5 rounded bg-orange-500/10 text-[9px] font-black uppercase text-orange-500 tracking-widest border border-orange-500/20 italic">{{ block.type }}</span>
+                       <div class="h-[1px] flex-1 bg-zinc-800"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                       <div v-for="(ex, exIdx) in block.exercises" :key="exIdx" class="px-3 py-2 bg-zinc-950 border border-zinc-800/50 rounded-xl flex items-center gap-2 shadow-sm">
+                         <span class="text-[11px] font-bold text-zinc-200">{{ ex.name }}</span>
+                         <span class="text-[10px] font-black text-orange-500 opacity-60 italic">{{ ex.reps }}</span>
+                       </div>
+                    </div>
                   </div>
                   
                   <button 
                     @click.stop="selectedWorkout = workout" 
-                    class="mt-4 h-12 bg-white text-zinc-950 rounded-xl font-black uppercase italic text-sm active:scale-95 transition-all w-full"
+                    class="mt-4 h-14 bg-white text-zinc-950 rounded-2xl font-black uppercase italic text-sm active:scale-95 transition-all w-full flex items-center justify-center gap-2 shadow-xl shadow-white/5"
                   >
                     Select This Session
+                    <div class="h-4 w-4 icon-mask i-lucide-play text-zinc-950"></div>
                   </button>
                </div>
             </div>
           </div>
+
+          <!-- Regenerate Button -->
+          <button 
+            @click="regenerateOptions"
+            class="mt-6 flex items-center justify-center gap-2 p-4 rounded-2xl border-2 border-dashed border-zinc-800 text-zinc-500 font-black uppercase text-[10px] tracking-widest hover:border-orange-500/30 hover:text-orange-500/70 transition-all active:scale-95 group"
+          >
+            <div class="h-4 w-4 icon-mask i-lucide-refresh-cw group-hover:rotate-180 transition-transform duration-500"></div>
+            Regenerate Suggestions
+          </button>
         </div>
       </div>
 

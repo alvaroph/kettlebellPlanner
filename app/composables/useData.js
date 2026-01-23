@@ -88,6 +88,7 @@ export var useData = function () {
       weeks: data.weeks,
       daysPerWeek: data.daysPerWeek,
       goal: data.goal,
+      focus: data.focusTags || data.focus || "Full body",
       intensity: data.intensity,
       active: 1,
       createdAt: new Date()
@@ -134,8 +135,12 @@ export var useData = function () {
   };
 
   // --- SESSIONS ---
-  var getDailySession = async function (sessionId) {
+  var getDailySession = async function (sessionId, excludeIds = []) {
     var session = await db.sessions.get(parseInt(sessionId));
+    if (!session) return null;
+
+    var program = await db.programs.get(session.programId);
+    
     var history = await db.sessions
       .where('status').equals('completed')
       .limit(20)
@@ -143,8 +148,14 @@ export var useData = function () {
     
     var workouts = await db.workouts.toArray();
     
-    // Recommendations using local engine
-    var recommendations = recommendWorkouts(workouts, history, session.sessionType);
+    // Recommendations using local engine with program preferences
+    var recommendations = recommendWorkouts(
+      workouts, 
+      history, 
+      session.sessionType, 
+      { intensity: program?.intensity, focus: program?.focus || program?.goal },
+      excludeIds
+    );
 
     return {
       session: session,
